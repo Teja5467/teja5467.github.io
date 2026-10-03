@@ -15,7 +15,21 @@ nav{position:sticky;top:0;background:#07111fe8;backdrop-filter:blur(10px);border
 nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:64px}
 .brand{font-weight:800;letter-spacing:.4px}.navlinks{display:flex;gap:18px}
 .navlinks a{text-decoration:none;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--text)}
-.hero{padding:105px 0 80px}.eyebrow{color:var(--accent);font-weight:700}
+.hero{
+  padding:120px 0 100px;
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,12,24,.94) 0%,
+      rgba(3,12,24,.78) 45%,
+      rgba(3,12,24,.35) 100%
+    ),
+    url('Cinematic%20QA%20Automation%20Workspace.png') center/cover no-repeat;
+}
+.eyebrow{color:var(--accent);font-weight:700}
 .hero h1{font-size:clamp(46px,8vw,78px);line-height:1;margin:12px 0}
 .hero h2{font-size:clamp(22px,4vw,34px);margin:0 0 20px;color:#d6e4f6}
 .hero p{max-width:700px;color:var(--muted);font-size:18px}
@@ -37,7 +51,7 @@ footer{padding:30px 0 50px;color:var(--muted);text-align:center}
 <body>
 <nav>
   <div class="wrap">
-    <div class="brand">TEJILAL / QA</div>
+    <div class="brand">TEJILAL</div>
     <div class="navlinks">
       <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
       <a href="#artifacts">Artifacts</a><a href="#education">Education</a><a href="#contact">Contact</a>
