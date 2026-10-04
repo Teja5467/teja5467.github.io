@@ -9,7 +9,7 @@
 <title>Tejilal | Software Tester | QA Engineer</title>
 
 <meta name="description"
-content="Tejilal - Software Tester and QA Engineer with experience in Manual Testing, Selenium Automation, SQL, API Testing and ServiceNow ITSM.">
+content="Tejilal - Software Tester and QA Engineer specializing in Manual Testing, Selenium Automation, SQL, API Testing and ServiceNow ITSM.">
 
 <style>
 
@@ -51,8 +51,8 @@ body{
 
   background:
     linear-gradient(
-      rgba(3,12,24,.88),
-      rgba(3,12,24,.93)
+      rgba(3,12,24,.86),
+      rgba(3,12,24,.92)
     ),
     url('Cinematic%20QA%20Automation%20Workspace.png')
     center center / cover fixed no-repeat;
@@ -71,6 +71,7 @@ a{
   width:min(1100px,92%);
 
   margin:auto;
+
 }
 
 
@@ -156,19 +157,32 @@ nav{
 
   min-height:650px;
 
-  padding:120px 0 100px;
+  padding:110px 0 90px;
 
   display:flex;
 
   align-items:center;
 
-  background:rgba(3,12,24,.25);
+  background:rgba(3,12,24,.20);
+
+}
+
+.hero-layout{
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 300px;
+
+  align-items:center;
+
+  gap:60px;
 
 }
 
 .hero-content{
 
-  max-width:800px;
+  max-width:760px;
 
 }
 
@@ -266,6 +280,42 @@ h1{
   color:#03101c;
 
   border-color:var(--accent);
+
+}
+
+
+/* =========================
+   PROFILE PHOTO
+========================= */
+
+.profile-wrapper{
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+}
+
+.profile-photo{
+
+  width:280px;
+
+  height:280px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  border:
+  5px solid rgba(56,189,248,.65);
+
+  box-shadow:
+  0 0 0 10px rgba(56,189,248,.08),
+  0 25px 70px rgba(0,0,0,.55);
+
+  background:#07182a;
 
 }
 
@@ -606,7 +656,7 @@ footer{
 
 
 /* =========================
-   MOBILE
+   TABLET / MOBILE
 ========================= */
 
 @media(max-width:800px){
@@ -629,9 +679,31 @@ footer{
 
   .hero{
 
-    padding:90px 0 80px;
+    padding:80px 0;
 
-    min-height:600px;
+    min-height:auto;
+
+  }
+
+  .hero-layout{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+  }
+
+  .profile-wrapper{
+
+    order:-1;
+
+  }
+
+  .profile-photo{
+
+    width:220px;
+
+    height:220px;
 
   }
 
@@ -683,6 +755,14 @@ footer{
   .section-title{
 
     font-size:30px;
+
+  }
+
+  .profile-photo{
+
+    width:190px;
+
+    height:190px;
 
   }
 
@@ -743,7 +823,10 @@ TEJILAL
 
 <header class="hero">
 
-<div class="container hero-content">
+<div class="container hero-layout">
+
+
+<div class="hero-content">
 
 <div class="eyebrow">
 SOFTWARE TESTING • QUALITY ASSURANCE
@@ -802,6 +885,21 @@ LinkedIn
 </a>
 
 </div>
+
+</div>
+
+
+<!-- PROFILE PHOTO -->
+
+<div class="profile-wrapper">
+
+<img
+class="profile-photo"
+src="Tejilal-Profile.png"
+alt="Tejilal - Software Tester and QA Engineer">
+
+</div>
+
 
 </div>
 
@@ -989,6 +1087,8 @@ defect analysis.
 <div class="grid">
 
 
+<!-- ORANGEHRM -->
+
 <div class="card project">
 
 <h3>
@@ -1021,6 +1121,8 @@ forms and employee search scenarios.
 </div>
 
 
+<!-- SELENIUM -->
+
 <div class="card project">
 
 <h3>
@@ -1052,6 +1154,8 @@ web application test scenarios.
 </div>
 
 
+<!-- SERVICENOW -->
+
 <div class="card project">
 
 <h3>
@@ -1080,6 +1184,8 @@ Change and Service Request management.
 
 </div>
 
+
+<!-- SQL -->
 
 <div class="card project">
 
@@ -1164,7 +1270,7 @@ View Test Plan →
 </div>
 
 
-<!-- ORANGEHRM ARTIFACTS -->
+<!-- ORANGEHRM EXCEL -->
 
 <div class="artifact">
 
@@ -1270,7 +1376,7 @@ View Product Testing Report →
 </div>
 
 
-<!-- AUTOMATION PROJECT -->
+<!-- SELENIUM -->
 
 <div class="artifact">
 
