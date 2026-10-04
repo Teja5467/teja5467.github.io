@@ -4,22 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tejilal | Software Tester • QA Engineer</title>
+<title>Tejilal | Software Tester & QA Engineer</title>
 
-<meta name="description" content="Tejilal - Software Tester and QA Engineer specializing in Manual Testing, Selenium Automation, API Testing, SQL and OrangeHRM testing.">
+<meta name="description"
+content="Tejilal - Software Tester and QA Engineer portfolio featuring Manual Testing, Selenium Automation, SQL, API Testing, ServiceNow ITSM and QA projects.">
+
+<meta name="keywords"
+content="Tejilal, Software Tester, QA Engineer, Manual Testing, Selenium, ServiceNow, SQL, API Testing, Java">
 
 <style>
 
+/* =========================
+   GLOBAL
+========================= */
+
 :root{
-  --bg:#030c18;
-  --card:rgba(8,22,40,.86);
-  --card2:rgba(12,30,52,.88);
-  --text:#f4f7fb;
-  --muted:#a9b7c8;
-  --accent:#38bdf8;
-  --accent2:#22c55e;
-  --border:rgba(255,255,255,.10);
-  --shadow:0 20px 60px rgba(0,0,0,.35);
+  --bg:#030b16;
+  --bg2:#071525;
+  --card:rgba(7,20,36,.78);
+  --card-strong:rgba(8,25,44,.92);
+  --text:#f5f9ff;
+  --muted:#a9b8ca;
+  --blue:#38bdf8;
+  --blue2:#0ea5e9;
+  --green:#22c55e;
+  --purple:#a78bfa;
+  --border:rgba(255,255,255,.11);
+  --shadow:0 20px 70px rgba(0,0,0,.35);
 }
 
 *{
@@ -32,18 +43,27 @@ html{
 
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
 
-  background:
-    linear-gradient(
-      rgba(3,12,24,.88),
-      rgba(3,12,24,.92)
-    ),
-    url('Cinematic%20QA%20Automation%20Workspace.png')
-    center center/cover fixed no-repeat;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
 
   color:var(--text);
   line-height:1.6;
+
+  background:
+    linear-gradient(
+      rgba(2,10,20,.88),
+      rgba(2,10,20,.94)
+    ),
+    url('Cinematic%20QA%20Automation%20Workspace.png')
+    center center / cover fixed no-repeat;
 }
 
 a{
@@ -51,167 +71,414 @@ a{
 }
 
 .container{
-  width:min(1100px,92%);
+  width:min(1120px,92%);
   margin:auto;
 }
 
-/* NAVIGATION */
+section{
+  padding:100px 0;
+  scroll-margin-top:80px;
+}
+
+.section-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  color:var(--blue);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  margin-bottom:12px;
+}
+
+.section-title{
+  margin:0 0 12px;
+
+  font-size:
+    clamp(30px,5vw,44px);
+
+  line-height:1.15;
+}
+
+.section-subtitle{
+  max-width:720px;
+
+  margin:0 0 42px;
+
+  color:var(--muted);
+  font-size:17px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
   position:sticky;
   top:0;
   z-index:1000;
 
-  background:rgba(3,12,24,.88);
-  backdrop-filter:blur(14px);
+  background:rgba(3,11,22,.82);
+  backdrop-filter:blur(18px);
 
   border-bottom:1px solid var(--border);
 }
 
 .navbar{
-  min-height:70px;
+  min-height:72px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+
+  gap:25px;
 }
 
 .brand{
   font-size:22px;
-  font-weight:800;
+  font-weight:900;
   letter-spacing:1px;
+}
+
+.brand span{
+  color:var(--blue);
 }
 
 .navlinks{
   display:flex;
   flex-wrap:wrap;
-  gap:22px;
+  justify-content:flex-end;
+  gap:20px;
 }
 
 .navlinks a{
-  text-decoration:none;
   color:var(--muted);
+
+  text-decoration:none;
+
   font-size:14px;
+  font-weight:600;
+
   transition:.2s;
 }
 
 .navlinks a:hover{
-  color:var(--text);
+  color:var(--blue);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  padding:120px 0 100px;
-  min-height:650px;
+  min-height:760px;
 
   display:flex;
   align-items:center;
 
-  background:rgba(3,12,24,.25);
+  padding:120px 0 110px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2,10,20,.90) 0%,
+      rgba(2,10,20,.72) 55%,
+      rgba(2,10,20,.40) 100%
+    );
 }
 
-.hero-content{
-  max-width:800px;
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  align-items:center;
+  gap:60px;
 }
 
-.eyebrow{
-  color:var(--accent);
+.availability{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+
+  padding:7px 13px;
+
+  border-radius:999px;
+
+  background:rgba(34,197,94,.09);
+  border:1px solid rgba(34,197,94,.25);
+
+  color:#b9f8ca;
+
+  font-size:13px;
   font-weight:700;
+
+  margin-bottom:22px;
+}
+
+.status-dot{
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:var(--green);
+
+  box-shadow:0 0 14px rgba(34,197,94,.7);
+}
+
+.hero-label{
+  color:var(--blue);
+
+  font-weight:800;
   letter-spacing:2px;
   font-size:14px;
-  margin-bottom:12px;
+
+  margin-bottom:10px;
 }
 
-h1{
-  font-size:clamp(48px,8vw,82px);
-  line-height:1;
-  margin:0 0 18px;
+.hero h1{
+  margin:0;
+
+  font-size:clamp(52px,8vw,88px);
+
+  line-height:.98;
+
+  letter-spacing:-3px;
+}
+
+.hero h1 span{
+  color:var(--blue);
 }
 
 .hero h2{
-  font-size:clamp(22px,4vw,34px);
-  margin:0 0 18px;
+  margin:22px 0 16px;
+
+  font-size:clamp(23px,4vw,34px);
+
+  line-height:1.2;
 }
 
-.hero p{
+.hero-description{
   max-width:720px;
+
   color:var(--muted);
+
   font-size:18px;
 }
 
-.buttons{
+.hero-buttons{
   display:flex;
   flex-wrap:wrap;
-  gap:14px;
-  margin-top:28px;
+
+  gap:12px;
+
+  margin-top:30px;
 }
 
 .btn{
-  display:inline-block;
-  padding:12px 20px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:46px;
+
+  padding:11px 19px;
+
   border-radius:10px;
 
   text-decoration:none;
-  font-weight:700;
+
+  font-weight:800;
+  font-size:14px;
 
   border:1px solid var(--border);
-  background:rgba(255,255,255,.06);
 
-  transition:.2s;
+  background:rgba(255,255,255,.055);
+
+  transition:.25s;
 }
 
 .btn:hover{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
+
   background:rgba(255,255,255,.10);
+
+  border-color:rgba(56,189,248,.35);
 }
 
 .btn-primary{
-  background:var(--accent);
-  color:#03101c;
-  border-color:var(--accent);
+  color:#03101a;
+
+  background:var(--blue);
+
+  border-color:var(--blue);
 }
 
-/* SECTIONS */
-
-section{
-  padding:90px 0;
-  scroll-margin-top:80px;
+.btn-primary:hover{
+  background:#67cdf5;
 }
 
-.section-title{
-  font-size:34px;
-  margin:0 0 12px;
+.btn-green{
+  border-color:rgba(34,197,94,.35);
+  color:#c7f9d4;
 }
 
-.section-subtitle{
-  color:var(--muted);
-  margin:0 0 35px;
-}
+/* HERO CARD */
 
-/* CARDS */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:22px;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-
+.hero-card{
   padding:28px;
+
+  border:1px solid var(--border);
+
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(10,31,53,.90),
+      rgba(5,17,30,.78)
+    );
 
   box-shadow:var(--shadow);
 
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(14px);
+}
+
+.hero-card-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  margin-bottom:25px;
+}
+
+.terminal-dots{
+  display:flex;
+  gap:6px;
+}
+
+.terminal-dots i{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#6b7b8f;
+}
+
+.hero-card-title{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.code-line{
+  display:flex;
+  gap:12px;
+
+  margin:12px 0;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+
+  font-size:13px;
+}
+
+.line-number{
+  color:#506276;
+  min-width:20px;
+}
+
+.code-blue{
+  color:var(--blue);
+}
+
+.code-green{
+  color:#86efac;
+}
+
+.code-purple{
+  color:#c4b5fd;
+}
+
+.code-muted{
+  color:#71839a;
+}
+
+/* =========================
+   QA SNAPSHOT
+========================= */
+
+.snapshot{
+  margin-top:-30px;
+
+  position:relative;
+  z-index:5;
+}
+
+.snapshot-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.snapshot-card{
+  padding:22px;
+
+  border:1px solid var(--border);
+  border-radius:16px;
+
+  background:rgba(7,20,36,.88);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:var(--shadow);
+}
+
+.snapshot-icon{
+  font-size:23px;
+  margin-bottom:10px;
+}
+
+.snapshot-card h3{
+  margin:0 0 4px;
+  font-size:17px;
+}
+
+.snapshot-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.card{
+  padding:30px;
+
+  border-radius:20px;
+
+  border:1px solid var(--border);
+
+  background:var(--card);
+
+  box-shadow:var(--shadow);
+
+  backdrop-filter:blur(12px);
 }
 
 .card h3{
-  margin-top:0;
+  margin:0 0 14px;
+  font-size:22px;
 }
 
 .card p{
@@ -219,11 +486,19 @@ section{
 }
 
 .card ul{
-  color:var(--muted);
+  margin:0;
   padding-left:20px;
+
+  color:var(--muted);
 }
 
-/* SKILLS */
+.card li{
+  margin:8px 0;
+}
+
+/* =========================
+   SKILLS
+========================= */
 
 .skills{
   display:flex;
@@ -232,81 +507,257 @@ section{
 }
 
 .skill{
-  padding:8px 13px;
+  padding:9px 14px;
 
-  border:1px solid rgba(56,189,248,.25);
   border-radius:999px;
 
-  background:rgba(56,189,248,.08);
-  color:#d9f4ff;
+  border:1px solid rgba(56,189,248,.22);
+
+  background:rgba(56,189,248,.075);
+
+  color:#d8f4ff;
 
   font-size:14px;
+  font-weight:600;
 }
 
-/* PROJECTS */
+/* =========================
+   TESTING WORKFLOW
+========================= */
 
-.project{
+.workflow{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:14px;
+}
+
+.workflow-step{
+  position:relative;
+
+  padding:24px 18px;
+
+  text-align:center;
+
+  border-radius:16px;
+
+  background:var(--card);
+
+  border:1px solid var(--border);
+}
+
+.workflow-number{
+  display:inline-flex;
+
+  width:34px;
+  height:34px;
+
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:rgba(56,189,248,.12);
+
+  color:var(--blue);
+
+  font-weight:900;
+
+  margin-bottom:12px;
+}
+
+.workflow-step h3{
+  margin:0 0 5px;
+  font-size:16px;
+}
+
+.workflow-step p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.project-card{
+  position:relative;
+
+  overflow:hidden;
+
+  padding:30px;
+
+  border-radius:20px;
+
+  border:1px solid var(--border);
+
+  background:var(--card);
+
+  box-shadow:var(--shadow);
+
+  transition:.25s;
+}
+
+.project-card:hover{
+  transform:translateY(-5px);
+
+  border-color:rgba(56,189,248,.32);
+}
+
+.project-top{
   display:flex;
-  flex-direction:column;
-  gap:12px;
+  justify-content:space-between;
+  align-items:flex-start;
+
+  gap:20px;
 }
 
-.project-tags{
+.project-number{
+  color:var(--blue);
+
+  font-family:monospace;
+
+  font-size:13px;
+  font-weight:800;
+}
+
+.project-card h3{
+  margin:8px 0 10px;
+
+  font-size:22px;
+}
+
+.project-card p{
+  color:var(--muted);
+}
+
+.project-list{
+  padding-left:20px;
+
+  color:var(--muted);
+}
+
+.project-list li{
+  margin:7px 0;
+}
+
+.tags{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
+
+  margin-top:20px;
 }
 
 .tag{
-  font-size:12px;
   padding:5px 9px;
 
   border-radius:999px;
 
-  background:rgba(34,197,94,.10);
-  color:#baf7ce;
+  font-size:12px;
 
-  border:1px solid rgba(34,197,94,.22);
+  color:#c7f1ff;
+
+  background:rgba(56,189,248,.08);
+
+  border:1px solid rgba(56,189,248,.18);
 }
 
-/* ARTIFACTS */
+/* =========================
+   SERVICENOW
+========================= */
 
-.artifacts{
+.servicenow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  gap:24px;
+}
+
+.service-item{
+  padding:20px;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,.035);
+
+  border:1px solid var(--border);
+}
+
+.service-item strong{
+  display:block;
+
+  margin-bottom:5px;
+
+  color:var(--text);
+}
+
+.service-item span{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* =========================
+   ARTIFACTS
+========================= */
+
+.artifact-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
 
 .artifact{
-  padding:22px;
+  padding:24px;
 
-  border-radius:16px;
+  border-radius:18px;
 
-  background:var(--card2);
+  background:var(--card);
+
   border:1px solid var(--border);
 
-  transition:.2s;
+  transition:.25s;
 }
 
 .artifact:hover{
   transform:translateY(-4px);
 }
 
+.artifact-icon{
+  font-size:26px;
+  margin-bottom:12px;
+}
+
 .artifact h3{
-  margin-top:0;
+  margin:0 0 8px;
 }
 
 .artifact p{
   color:var(--muted);
+  font-size:14px;
 }
 
 .artifact a{
-  color:var(--accent);
+  color:var(--blue);
+
   text-decoration:none;
-  font-weight:700;
+
+  font-weight:800;
+
+  font-size:14px;
 }
 
-/* EDUCATION */
+/* =========================
+   EDUCATION
+========================= */
 
 .timeline{
   display:grid;
@@ -314,53 +765,112 @@ section{
 }
 
 .timeline-item{
-  padding:22px;
+  position:relative;
 
-  border-left:3px solid var(--accent);
+  padding:25px 28px;
+
+  border-left:3px solid var(--blue);
+
+  border-radius:0 16px 16px 0;
 
   background:var(--card);
 
-  border-radius:0 14px 14px 0;
+  border-top:1px solid var(--border);
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
 
 .timeline-item h3{
   margin:0 0 5px;
+  font-size:20px;
+}
+
+.timeline-item .institution{
+  color:var(--blue);
+  font-weight:700;
 }
 
 .timeline-item p{
-  margin:4px 0;
+  margin:5px 0;
   color:var(--muted);
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-box{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:20px;
+  gap:18px;
 }
 
 .contact-item{
   padding:24px;
 
-  background:var(--card);
-  border:1px solid var(--border);
-
   border-radius:16px;
+
+  background:var(--card);
+
+  border:1px solid var(--border);
 }
 
 .contact-item strong{
   display:block;
+
   margin-bottom:6px;
 }
 
 .contact-item a{
-  color:var(--accent);
+  color:var(--blue);
+
   text-decoration:none;
+
   word-break:break-word;
 }
 
-/* FOOTER */
+.contact-item span{
+  color:var(--muted);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+  padding:45px;
+
+  text-align:center;
+
+  border-radius:24px;
+
+  border:1px solid rgba(56,189,248,.20);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(14,165,233,.12),
+      rgba(167,139,250,.08)
+    );
+}
+
+.cta h2{
+  margin:0 0 10px;
+
+  font-size:32px;
+}
+
+.cta p{
+  max-width:650px;
+
+  margin:0 auto 25px;
+
+  color:var(--muted);
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   padding:35px 0;
@@ -371,42 +881,125 @@ footer{
 
   color:var(--muted);
 
-  background:rgba(3,12,24,.80);
+  background:rgba(2,10,20,.88);
 }
 
-/* RESPONSIVE */
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:20px;
 
-@media(max-width:800px){
+  margin-bottom:12px;
+}
+
+.footer-links a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  color:var(--blue);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-card{
+    display:none;
+  }
+
+  .snapshot-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .workflow{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .artifact-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:700px){
 
   .navbar{
     padding:14px 0;
+
     align-items:flex-start;
+
     flex-direction:column;
   }
 
   .navlinks{
-    gap:12px 16px;
+    justify-content:flex-start;
+
+    gap:11px 15px;
   }
 
   .hero{
+    min-height:auto;
+
     padding:90px 0 80px;
-    min-height:600px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .hero-description{
+    font-size:16px;
   }
 
   section{
-    padding:70px 0;
+    padding:75px 0;
   }
 
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .artifacts{
-    grid-template-columns:1fr;
-  }
-
+  .about-grid,
+  .project-grid,
+  .servicenow,
   .contact-box{
     grid-template-columns:1fr;
+  }
+
+  .snapshot-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .workflow{
+    grid-template-columns:1fr;
+  }
+
+  .artifact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cta{
+    padding:30px 20px;
+  }
+
+}
+
+@media(max-width:450px){
+
+  .snapshot-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
   }
 
 }
@@ -414,77 +1007,229 @@ footer{
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
+
   <div class="container navbar">
 
     <div class="brand">
-      TEJILAL
+      TEJILAL<span>.</span>
     </div>
 
     <div class="navlinks">
+
       <a href="#about">About</a>
+
       <a href="#skills">Skills</a>
+
+      <a href="#workflow">QA Process</a>
+
       <a href="#projects">Projects</a>
+
       <a href="#artifacts">Artifacts</a>
+
       <a href="#education">Education</a>
+
       <a href="#contact">Contact</a>
+
     </div>
 
   </div>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
-  <div class="container hero-content">
+  <div class="container hero-grid">
 
-    <div class="eyebrow">
-      SOFTWARE TESTING • QUALITY ASSURANCE
+
+    <div>
+
+      <div class="availability">
+
+        <span class="status-dot"></span>
+
+        Open to Software Testing Opportunities
+
+      </div>
+
+
+      <div class="hero-label">
+        SOFTWARE TESTING • QUALITY ASSURANCE
+      </div>
+
+
+      <h1>
+        TEJILAL<span>.</span>
+      </h1>
+
+
+      <h2>
+        Software Tester <span style="color:var(--blue)">|</span>
+        QA Engineer
+      </h2>
+
+
+      <p class="hero-description">
+
+        BCA graduate with hands-on experience in
+        Manual Testing, Selenium Automation, SQL,
+        API Testing and ServiceNow ITSM.
+        I focus on finding defects, validating
+        application behavior and improving software quality.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-primary"
+          href="#projects">
+
+          🧪 Explore QA Projects
+
+        </a>
+
+
+        <a
+          class="btn"
+          href="https://github.com/Teja5467/teja5467.github.io"
+          target="_blank">
+
+          GitHub
+
+        </a>
+
+
+        <a
+          class="btn btn-green"
+          href="https://www.linkedin.com/in/guguloth-tejilal-9a6b35427"
+          target="_blank">
+
+          LinkedIn
+
+        </a>
+
+      </div>
+
     </div>
 
-    <h1>
-      HELLO, I'M<br>
-      TEJILAL
-    </h1>
 
-    <h2>
-      Software Tester • QA Engineer
-    </h2>
+    <!-- CODE CARD -->
 
-    <p>
-      BCA graduate with hands-on experience in Manual Testing,
-      Selenium Automation, API Testing, SQL and ServiceNow ITSM.
-      Passionate about finding defects, improving software quality,
-      and delivering reliable user experiences.
-    </p>
+    <div class="hero-card">
 
-    <div class="buttons">
+      <div class="hero-card-top">
 
-      <a
-        class="btn btn-primary"
-        href="#projects">
-        View My Projects
-      </a>
+        <div class="terminal-dots">
 
-      <a
-        class="btn"
-        href="https://github.com/Teja5467/teja5467.github.io"
-        target="_blank">
-        GitHub
-      </a>
+          <i></i>
+          <i></i>
+          <i></i>
 
-      <a
-        class="btn"
-        href="https://www.linkedin.com/in/guguloth-tejilal-9a6b35427"
-        target="_blank">
-        LinkedIn
-      </a>
+        </div>
+
+        <div class="hero-card-title">
+          qa-engineer.profile
+        </div>
+
+      </div>
+
+
+      <div class="code-line">
+
+        <span class="line-number">01</span>
+
+        <span>
+          <span class="code-blue">role</span>:
+          <span class="code-green">"QA Engineer"</span>
+        </span>
+
+      </div>
+
+
+      <div class="code-line">
+
+        <span class="line-number">02</span>
+
+        <span>
+          <span class="code-blue">testing</span>:
+          <span class="code-green">"Manual"</span>
+        </span>
+
+      </div>
+
+
+      <div class="code-line">
+
+        <span class="line-number">03</span>
+
+        <span>
+          <span class="code-blue">automation</span>:
+          <span class="code-green">"Selenium"</span>
+        </span>
+
+      </div>
+
+
+      <div class="code-line">
+
+        <span class="line-number">04</span>
+
+        <span>
+          <span class="code-blue">language</span>:
+          <span class="code-green">"Java"</span>
+        </span>
+
+      </div>
+
+
+      <div class="code-line">
+
+        <span class="line-number">05</span>
+
+        <span>
+          <span class="code-blue">database</span>:
+          <span class="code-green">"SQL"</span>
+        </span>
+
+      </div>
+
+
+      <div class="code-line">
+
+        <span class="line-number">06</span>
+
+        <span>
+          <span class="code-blue">itsm</span>:
+          <span class="code-green">"ServiceNow"</span>
+        </span>
+
+      </div>
+
+
+      <div class="code-line">
+
+        <span class="line-number">07</span>
+
+        <span class="code-purple">status</span>:
+        <span class="code-green">"READY"</span>
+
+      </div>
+
 
     </div>
 
@@ -493,37 +1238,140 @@ footer{
 </header>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     QA SNAPSHOT
+========================= -->
+
+<div class="snapshot">
+
+  <div class="container">
+
+    <div class="snapshot-grid">
+
+
+      <div class="snapshot-card">
+
+        <div class="snapshot-icon">
+          🧪
+        </div>
+
+        <h3>
+          Manual Testing
+        </h3>
+
+        <p>
+          Functional, regression, smoke and UI testing
+        </p>
+
+      </div>
+
+
+      <div class="snapshot-card">
+
+        <div class="snapshot-icon">
+          🤖
+        </div>
+
+        <h3>
+          Automation
+        </h3>
+
+        <p>
+          Selenium WebDriver with Java
+        </p>
+
+      </div>
+
+
+      <div class="snapshot-card">
+
+        <div class="snapshot-icon">
+          🗄️
+        </div>
+
+        <h3>
+          SQL
+        </h3>
+
+        <p>
+          Database and application data validation
+        </p>
+
+      </div>
+
+
+      <div class="snapshot-card">
+
+        <div class="snapshot-icon">
+          🛠️
+        </div>
+
+        <h3>
+          ServiceNow
+        </h3>
+
+        <p>
+          ITSM workflow experience
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
   <div class="container">
 
+    <div class="section-label">
+      ABOUT ME
+    </div>
+
     <h2 class="section-title">
-      About Me
+      Quality starts with asking the right questions.
     </h2>
 
     <p class="section-subtitle">
-      Quality-focused tester with a strong interest in software quality,
-      automation and real-world application testing.
+
+      I am a BCA graduate building my career in
+      Software Testing and Quality Assurance.
+
     </p>
 
-    <div class="grid">
+
+    <div class="about-grid">
+
 
       <div class="card">
 
-        <h3>Who I Am</h3>
+        <h3>
+          👨‍💻 My QA Approach
+        </h3>
 
         <p>
-          I am a BCA graduate focused on building a career in
-          Software Testing and Quality Assurance.
-          I enjoy analyzing applications, identifying defects,
-          designing test cases and improving overall software quality.
+
+          I approach testing by understanding application
+          behavior, designing meaningful test scenarios,
+          executing tests carefully, documenting defects
+          and validating fixes.
+
         </p>
 
         <p>
-          I have worked with testing tools and technologies including
-          Selenium WebDriver, Java, SQL, API testing and ServiceNow ITSM.
+
+          My practical work covers web application testing,
+          Selenium automation, SQL validation and
+          ServiceNow ITSM workflows.
+
         </p>
 
       </div>
@@ -531,33 +1379,32 @@ footer{
 
       <div class="card">
 
-        <h3>What I Do</h3>
+        <h3>
+          🔍 What I Focus On
+        </h3>
 
         <ul>
 
-          <li>Manual Testing</li>
+          <li>Functional and UI testing</li>
 
-          <li>Functional Testing</li>
+          <li>Positive and negative test scenarios</li>
 
-          <li>Regression Testing</li>
+          <li>Regression and smoke testing</li>
 
-          <li>Smoke Testing</li>
+          <li>Test case design and execution</li>
 
-          <li>UI Testing</li>
+          <li>Defect identification and documentation</li>
 
-          <li>Test Case Design</li>
+          <li>Web automation using Selenium</li>
 
-          <li>Defect Reporting</li>
+          <li>SQL-based data validation</li>
 
-          <li>Selenium Automation</li>
-
-          <li>SQL Validation</li>
-
-          <li>API Testing</li>
+          <li>ITSM workflows using ServiceNow</li>
 
         </ul>
 
       </div>
+
 
     </div>
 
@@ -566,39 +1413,70 @@ footer{
 </section>
 
 
-<!-- SKILLS -->
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section id="skills">
 
   <div class="container">
 
+    <div class="section-label">
+      TECHNICAL TOOLKIT
+    </div>
+
     <h2 class="section-title">
-      QA Toolkit
+      Tools I use to test, automate and validate.
     </h2>
 
     <p class="section-subtitle">
-      Tools and technologies I use for testing and automation.
+
+      A practical combination of testing fundamentals,
+      automation, programming, databases and ITSM.
+
     </p>
+
 
     <div class="skills">
 
       <span class="skill">Manual Testing</span>
+
       <span class="skill">Functional Testing</span>
+
       <span class="skill">Regression Testing</span>
+
       <span class="skill">Smoke Testing</span>
+
+      <span class="skill">UI Testing</span>
+
+      <span class="skill">Test Case Design</span>
+
+      <span class="skill">Defect Reporting</span>
+
       <span class="skill">Selenium WebDriver</span>
+
       <span class="skill">Java</span>
+
       <span class="skill">SQL</span>
+
       <span class="skill">API Testing</span>
+
       <span class="skill">Postman</span>
-      <span class="skill">TestNG</span>
+
       <span class="skill">JUnit</span>
+
+      <span class="skill">TestNG</span>
+
       <span class="skill">Maven</span>
+
       <span class="skill">Git</span>
+
       <span class="skill">GitHub</span>
-      <span class="skill">JIRA</span>
+
       <span class="skill">ServiceNow</span>
+
       <span class="skill">Linux</span>
+
       <span class="skill">Python</span>
 
     </div>
@@ -608,42 +1486,256 @@ footer{
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =========================
+     QA PROCESS
+========================= -->
+
+<section id="workflow">
+
+  <div class="container">
+
+    <div class="section-label">
+      QA PROCESS
+    </div>
+
+    <h2 class="section-title">
+      How I approach a testing assignment.
+    </h2>
+
+    <p class="section-subtitle">
+
+      A structured testing workflow from understanding
+      requirements through regression validation.
+
+    </p>
+
+
+    <div class="workflow">
+
+
+      <div class="workflow-step">
+
+        <div class="workflow-number">
+          01
+        </div>
+
+        <h3>
+          Requirement Analysis
+        </h3>
+
+        <p>
+          Understand requirements and expected behavior.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="workflow-number">
+          02
+        </div>
+
+        <h3>
+          Test Design
+        </h3>
+
+        <p>
+          Create scenarios and test cases.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="workflow-number">
+          03
+        </div>
+
+        <h3>
+          Test Execution
+        </h3>
+
+        <p>
+          Execute positive and negative scenarios.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="workflow-number">
+          04
+        </div>
+
+        <h3>
+          Defect Reporting
+        </h3>
+
+        <p>
+          Document defects with clear reproduction steps.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="workflow-number">
+          05
+        </div>
+
+        <h3>
+          Retesting
+        </h3>
+
+        <p>
+          Validate fixes after defect resolution.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="workflow-number">
+          06
+        </div>
+
+        <h3>
+          Regression
+        </h3>
+
+        <p>
+          Check that changes haven't broken existing functionality.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="workflow-number">
+          07
+        </div>
+
+        <h3>
+          Validation
+        </h3>
+
+        <p>
+          Validate application behavior and data.
+        </p>
+
+      </div>
+
+
+      <div class="workflow-step">
+
+        <div class="workflow-number">
+          08
+        </div>
+
+        <h3>
+          Test Closure
+        </h3>
+
+        <p>
+          Summarize results and testing observations.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
 
 <section id="projects">
 
   <div class="container">
 
+    <div class="section-label">
+      FEATURED QA PROJECTS
+    </div>
+
     <h2 class="section-title">
-      Testing Projects
+      Testing projects with practical evidence.
     </h2>
 
     <p class="section-subtitle">
-      Practical QA projects demonstrating manual testing,
-      automation and defect analysis.
+
+      Projects demonstrating manual testing,
+      automation, data validation and ITSM knowledge.
+
     </p>
 
-    <div class="grid">
+
+    <div class="project-grid">
 
 
-      <div class="card project">
+      <!-- PROJECT 01 -->
+
+      <div class="project-card">
+
+        <div class="project-top">
+
+          <div class="project-number">
+            PROJECT 01
+          </div>
+
+          <div>
+            🧪
+          </div>
+
+        </div>
+
 
         <h3>
-          OrangeHRM QA Testing
+          OrangeHRM — End-to-End QA
         </h3>
 
+
         <p>
-          End-to-end testing of the OrangeHRM web application
-          covering login, employee management, leave management,
-          dashboard and other major workflows.
+
+          Practical testing of the OrangeHRM web application
+          covering important user workflows and functional behavior.
+
         </p>
 
-        <div class="project-tags">
+
+        <ul class="project-list">
+
+          <li>Functional test scenario design</li>
+
+          <li>Positive and negative testing</li>
+
+          <li>Login and application workflow validation</li>
+
+          <li>Regression testing</li>
+
+          <li>Defect documentation</li>
+
+        </ul>
+
+
+        <div class="tags">
 
           <span class="tag">Manual Testing</span>
-          <span class="tag">Functional Testing</span>
+
+          <span class="tag">Functional</span>
+
           <span class="tag">Regression</span>
-          <span class="tag">Test Cases</span>
+
           <span class="tag">Defect Reporting</span>
 
         </div>
@@ -651,74 +1743,178 @@ footer{
       </div>
 
 
-      <div class="card project">
+      <!-- PROJECT 02 -->
+
+      <div class="project-card">
+
+        <div class="project-top">
+
+          <div class="project-number">
+            PROJECT 02
+          </div>
+
+          <div>
+            🤖
+          </div>
+
+        </div>
+
 
         <h3>
-          Selenium Automation Framework
+          Selenium Automation
         </h3>
 
+
         <p>
-          Selenium WebDriver automation project using Java,
-          JUnit and Maven to automate web application test scenarios.
+
+          Web automation project using Selenium WebDriver
+          with Java and a Maven-based project structure.
+
         </p>
 
-        <div class="project-tags">
+
+        <ul class="project-list">
+
+          <li>WebDriver-based automation</li>
+
+          <li>Automated web application scenarios</li>
+
+          <li>Java test implementation</li>
+
+          <li>JUnit-based testing</li>
+
+          <li>Maven project management</li>
+
+        </ul>
+
+
+        <div class="tags">
 
           <span class="tag">Selenium</span>
+
           <span class="tag">Java</span>
+
           <span class="tag">JUnit</span>
+
           <span class="tag">Maven</span>
-          <span class="tag">Automation</span>
 
         </div>
 
       </div>
 
 
-      <div class="card project">
+      <!-- PROJECT 03 -->
 
-        <h3>
-          ServiceNow ITSM
-        </h3>
+      <div class="project-card">
 
-        <p>
-          Hands-on experience with ServiceNow ITSM workflows
-          including Incident, Problem, Change and Service Request
-          management.
-        </p>
+        <div class="project-top">
 
-        <div class="project-tags">
+          <div class="project-number">
+            PROJECT 03
+          </div>
 
-          <span class="tag">ServiceNow</span>
-          <span class="tag">ITSM</span>
-          <span class="tag">Incident Management</span>
-          <span class="tag">Service Desk</span>
+          <div>
+            🗄️
+          </div>
 
         </div>
 
-      </div>
-
-
-      <div class="card project">
 
         <h3>
-          SQL Validation
+          SQL Data Validation
         </h3>
 
+
         <p>
-          SQL queries and database validation techniques used
-          for verifying application data and testing backend results.
+
+          SQL validation exercises focused on verifying
+          application data and understanding database-level
+          testing concepts.
+
         </p>
 
-        <div class="project-tags">
+
+        <ul class="project-list">
+
+          <li>SQL query writing</li>
+
+          <li>Data verification</li>
+
+          <li>Backend validation concepts</li>
+
+          <li>Expected vs actual data comparison</li>
+
+        </ul>
+
+
+        <div class="tags">
 
           <span class="tag">SQL</span>
+
           <span class="tag">Database Testing</span>
-          <span class="tag">Data Validation</span>
+
+          <span class="tag">Validation</span>
 
         </div>
 
       </div>
+
+
+      <!-- PROJECT 04 -->
+
+      <div class="project-card">
+
+        <div class="project-top">
+
+          <div class="project-number">
+            PROJECT 04
+          </div>
+
+          <div>
+            🔌
+          </div>
+
+        </div>
+
+
+        <h3>
+          API Testing
+        </h3>
+
+
+        <p>
+
+          API testing practice focused on validating requests,
+          responses and expected API behavior.
+
+        </p>
+
+
+        <ul class="project-list">
+
+          <li>Request and response validation</li>
+
+          <li>Status code verification</li>
+
+          <li>Positive and negative scenarios</li>
+
+          <li>Postman-based API testing concepts</li>
+
+        </ul>
+
+
+        <div class="tags">
+
+          <span class="tag">API Testing</span>
+
+          <span class="tag">Postman</span>
+
+          <span class="tag">Validation</span>
+
+        </div>
+
+      </div>
+
 
     </div>
 
@@ -727,117 +1923,239 @@ footer{
 </section>
 
 
-<!-- QA ARTIFACTS -->
+<!-- =========================
+     SERVICENOW
+========================= -->
+
+<section id="servicenow">
+
+  <div class="container">
+
+    <div class="section-label">
+      SERVICENOW ITSM
+    </div>
+
+    <h2 class="section-title">
+      ITSM experience alongside QA.
+    </h2>
+
+    <p class="section-subtitle">
+
+      Hands-on experience with core ServiceNow ITSM workflows
+      during my internship.
+
+    </p>
+
+
+    <div class="servicenow">
+
+
+      <div class="service-item">
+
+        <strong>
+          Incident Management
+        </strong>
+
+        <span>
+          Worked with incident workflows and service desk processes.
+        </span>
+
+      </div>
+
+
+      <div class="service-item">
+
+        <strong>
+          Problem Management
+        </strong>
+
+        <span>
+          Exposure to problem management workflows in ServiceNow.
+        </span>
+
+      </div>
+
+
+      <div class="service-item">
+
+        <strong>
+          Change Management
+        </strong>
+
+        <span>
+          Hands-on exposure to change workflow management.
+        </span>
+
+      </div>
+
+
+      <div class="service-item">
+
+        <strong>
+          Service Requests
+        </strong>
+
+        <span>
+          Worked with service request workflows and ITSM processes.
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ARTIFACTS
+========================= -->
 
 <section id="artifacts">
 
   <div class="container">
 
+    <div class="section-label">
+      QA EVIDENCE
+    </div>
+
     <h2 class="section-title">
-      OrangeHRM QA Artifacts
+      Don't just take my word for it.
     </h2>
 
     <p class="section-subtitle">
-      Documentation created as part of my practical testing project.
+
+      Testing documentation and project artifacts available
+      through my GitHub repository.
+
     </p>
 
-    <div class="artifacts">
+
+    <div class="artifact-grid">
 
 
       <div class="artifact">
+
+        <div class="artifact-icon">
+          📋
+        </div>
 
         <h3>
           Test Plan
         </h3>
 
         <p>
-          Detailed testing scope, objectives, test approach,
-          resources and testing activities.
+          Testing scope, objectives, approach and planned activities.
         </p>
 
         <a
           href="qa-artifacts/test-plan.md"
           target="_blank">
+
           View Test Plan →
+
         </a>
 
       </div>
 
 
       <div class="artifact">
+
+        <div class="artifact-icon">
+          🧪
+        </div>
 
         <h3>
           Test Cases
         </h3>
 
         <p>
-          Functional test scenarios and test cases covering
-          major OrangeHRM workflows.
+          Functional scenarios and test cases for application workflows.
         </p>
 
         <a
           href="qa-artifacts/test-cases.xlsx"
           target="_blank">
+
           View Test Cases →
+
         </a>
 
       </div>
 
 
       <div class="artifact">
+
+        <div class="artifact-icon">
+          🐞
+        </div>
 
         <h3>
           Bug Reports
         </h3>
 
         <p>
-          Sample defect documentation including severity,
-          priority, steps to reproduce and expected results.
+          Defect documentation with reproduction information and results.
         </p>
 
         <a
           href="qa-artifacts/bug-reports.md"
           target="_blank">
+
           View Bug Reports →
+
         </a>
 
       </div>
 
 
       <div class="artifact">
+
+        <div class="artifact-icon">
+          🗄️
+        </div>
 
         <h3>
           SQL Validation
         </h3>
 
         <p>
-          SQL queries and validation examples for testing
-          application data.
+          SQL examples and database validation exercises.
         </p>
 
         <a
           href="qa-artifacts/sql-validation.md"
           target="_blank">
+
           View SQL →
+
         </a>
 
       </div>
 
 
       <div class="artifact">
+
+        <div class="artifact-icon">
+          🤖
+        </div>
 
         <h3>
           Automation
         </h3>
 
         <p>
-          Selenium automation source code and project documentation.
+          Selenium automation project and supporting documentation.
         </p>
 
         <a
           href="automation/"
           target="_blank">
+
           View Automation →
+
         </a>
 
       </div>
@@ -845,21 +2163,28 @@ footer{
 
       <div class="artifact">
 
+        <div class="artifact-icon">
+          💻
+        </div>
+
         <h3>
           GitHub Repository
         </h3>
 
         <p>
-          Source code, testing documentation and project files.
+          Source code, documentation and portfolio project files.
         </p>
 
         <a
           href="https://github.com/Teja5467/teja5467.github.io"
           target="_blank">
-          Open Repository →
+
+          Open GitHub →
+
         </a>
 
       </div>
+
 
     </div>
 
@@ -868,19 +2193,26 @@ footer{
 </section>
 
 
-<!-- EDUCATION -->
+<!-- =========================
+     EDUCATION
+========================= -->
 
 <section id="education">
 
   <div class="container">
+
+    <div class="section-label">
+      BACKGROUND
+    </div>
 
     <h2 class="section-title">
       Education & Experience
     </h2>
 
     <p class="section-subtitle">
-      Academic background and practical experience.
+      Academic foundation and practical technical experience.
     </p>
+
 
     <div class="timeline">
 
@@ -891,9 +2223,9 @@ footer{
           BCA — Bachelor of Computer Applications
         </h3>
 
-        <p>
+        <div class="institution">
           Government City College
-        </p>
+        </div>
 
         <p>
           August 2023 – April 2026
@@ -912,17 +2244,17 @@ footer{
           ServiceNow ITSM Intern
         </h3>
 
-        <p>
+        <div class="institution">
           SmartBridge — AICTE
-        </p>
+        </div>
 
         <p>
           June 2026
         </p>
 
         <p>
-          Worked with Incident, Problem, Change and Service Request
-          workflows in ServiceNow ITSM.
+          Hands-on experience with Incident, Problem,
+          Change and Service Request workflows in ServiceNow ITSM.
         </p>
 
       </div>
@@ -931,14 +2263,70 @@ footer{
       <div class="timeline-item">
 
         <h3>
-          QA / Software Testing Projects
+          Software Testing Projects
         </h3>
 
+        <div class="institution">
+          Practical QA Portfolio
+        </div>
+
         <p>
-          Practical experience with Manual Testing,
-          Selenium Automation, SQL validation and
-          OrangeHRM application testing.
+          Manual testing, Selenium automation,
+          SQL validation, API testing and web application testing.
         </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section>
+
+  <div class="container">
+
+    <div class="cta">
+
+      <h2>
+        Looking for a QA opportunity?
+      </h2>
+
+      <p>
+
+        I am interested in Software Testing, QA,
+        Service Desk and entry-level technology roles.
+
+      </p>
+
+
+      <div class="hero-buttons" style="justify-content:center;">
+
+        <a
+          class="btn btn-primary"
+          href="https://www.linkedin.com/in/guguloth-tejilal-9a6b35427"
+          target="_blank">
+
+          Connect on LinkedIn
+
+        </a>
+
+
+        <a
+          class="btn"
+          href="https://github.com/Teja5467/teja5467.github.io"
+          target="_blank">
+
+          View GitHub
+
+        </a>
 
       </div>
 
@@ -949,19 +2337,28 @@ footer{
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact">
 
   <div class="container">
 
+    <div class="section-label">
+      CONTACT
+    </div>
+
     <h2 class="section-title">
-      Contact
+      Let's connect.
     </h2>
 
     <p class="section-subtitle">
-      Interested in Software Testing, QA and entry-level opportunities.
+
+      For recruiters, hiring teams and professional connections.
+
     </p>
+
 
     <div class="contact-box">
 
@@ -1020,14 +2417,15 @@ footer{
       <div class="contact-item">
 
         <strong>
-          Role
+          Target Roles
         </strong>
 
         <span>
-          Software Tester • QA Engineer
+          Software Tester • QA Engineer • Service Desk
         </span>
 
       </div>
+
 
     </div>
 
@@ -1036,17 +2434,53 @@ footer{
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
   <div class="container">
 
-    © 2026 Tejilal • Software Tester / QA Engineer
+    <div class="footer-links">
+
+      <a
+        href="https://github.com/Teja5467/teja5467.github.io"
+        target="_blank">
+
+        GitHub
+
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/guguloth-tejilal-9a6b35427"
+        target="_blank">
+
+        LinkedIn
+
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#projects">
+        Projects
+      </a>
+
+    </div>
+
+
+    <div>
+
+      © 2026 Tejilal • Software Tester / QA Engineer
+
+    </div>
 
   </div>
 
 </footer>
+
 
 </body>
 </html>
