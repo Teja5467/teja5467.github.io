@@ -1,77 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+
+  <title>TEJA | QA Test Engineer Portfolio</title>
 
   <meta name="description"
-        content="Tejilal Guguloth — Software Tester and QA Engineer portfolio. Manual testing, Selenium automation, Java, SQL, API testing and ServiceNow ITSM.">
-
-  <title>Tejilal Guguloth — Software Tester / QA Engineer</title>
+    content="Teja's QA Testing Portfolio featuring Manual Testing, Selenium Automation, Java, SQL, API Testing, and software quality projects.">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
-
     :root {
-      --paper: #f4f0e6;
-      --paper-2: #ebe5d8;
-      --ink: #252447;
-      --muted: #74716b;
-      --line: rgba(37, 36, 71, .16);
-      --accent: #30306b;
-      --white: #fffdf7;
-      --shadow: 0 24px 70px rgba(36, 32, 62, .12);
+      --bg: #080b12;
+      --panel: #101722;
+      --panel-light: #151e2b;
+      --text: #f5f7fb;
+      --muted: #a7b1c2;
+      --accent: #ff7a18;
+      --accent-light: #ffab61;
+      --border: rgba(255, 255, 255, 0.1);
+      --max-width: 1150px;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(
-          circle at 85% 10%,
-          rgba(120,105,175,.10),
-          transparent 25%
-        ),
-        linear-gradient(
-          180deg,
-          var(--paper),
-          #f8f5ed 55%,
-          var(--paper-2)
-        );
-
-      font-family: "DM Sans", system-ui, sans-serif;
-      line-height: 1.55;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
       overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .18;
-
-      background-image:
-        linear-gradient(
-          rgba(37,36,71,.025) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(37,36,71,.025) 1px,
-          transparent 1px
-        );
-
-      background-size: 34px 34px;
-      z-index: -1;
     }
 
     a {
@@ -79,1461 +48,754 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    button, a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     button {
       font: inherit;
     }
 
-    .wrap {
-      width: min(1180px, calc(100% - 48px));
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max-width), 90%);
       margin: auto;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    .nav-shell {
-      position: fixed;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-
-      width: min(1160px, calc(100% - 28px));
-
-      z-index: 100;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      padding: 10px 12px 10px 18px;
-
-      background: rgba(255,253,247,.78);
-
-      border: 1px solid rgba(37,36,71,.10);
-
-      border-radius: 999px;
-
-      backdrop-filter: blur(18px);
-
-      box-shadow:
-        0 12px 35px rgba(37,36,71,.08);
+    .accent {
+      color: var(--accent);
     }
 
-    .brand {
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      font-weight: 800;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-top: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-top: 14px;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 11, 18, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 10px;
+      gap: 24px;
+    }
 
-      font-size: 13px;
-      font-weight: 700;
-
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 2px;
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 30px;
-      height: 30px;
-
-      border-radius: 50%;
-
-      display: grid;
-      place-items: center;
-
-      color: white;
-      background: var(--accent);
-
-      font-size: 11px;
+    .logo span {
+      color: var(--accent);
     }
 
     .nav-links {
       display: flex;
+      gap: 24px;
       align-items: center;
-      gap: 4px;
     }
 
     .nav-links a {
-      padding: 10px 14px;
-
-      border-radius: 999px;
-
-      color: #59575f;
-
-      font-size: 12px;
-      font-weight: 600;
-
-      transition: .25s ease;
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      background: var(--accent);
-      color: #fff;
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
-    .menu-btn {
+    .menu-toggle {
       display: none;
-
-      width: 38px;
-      height: 38px;
-
-      border: 0;
-      border-radius: 50%;
-
-      background: var(--accent);
-      color: #fff;
-
+      background: transparent;
+      color: white;
+      border: 1px solid var(--border);
+      padding: 7px 12px;
+      border-radius: 8px;
       cursor: pointer;
     }
 
-    /* =========================
-       COMMON
-    ========================= */
-
-    section {
-      scroll-margin-top: 105px;
-    }
-
-    .section {
-      padding: 135px 0;
-    }
-
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      color: #89847b;
-
-      font-size: 10px;
-      letter-spacing: .22em;
-
-      text-transform: uppercase;
-      font-weight: 700;
-
-      margin-bottom: 24px;
-    }
-
-    .section-label span {
-      display: inline-grid;
-      place-items: center;
-
-      width: 26px;
-      height: 26px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 50%;
-
-      font-size: 9px;
-      letter-spacing: 0;
-    }
-
-    .display {
-      margin: 0;
-
-      font-size: clamp(52px, 8vw, 118px);
-
-      line-height: .89;
-
-      letter-spacing: -.065em;
-
-      font-weight: 700;
-    }
-
-    .serif {
-      font-family: "Playfair Display", Georgia, serif;
-
-      font-weight: 500;
-
-      letter-spacing: -.045em;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    /* Scroll reveal */
-
-    .reveal {
-      opacity: 0;
-
-      transform: translateY(35px);
-
-      transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.75,.2,1);
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
-      min-height: 100vh;
-
-      padding: 155px 0 70px;
-
-      position: relative;
-
+      min-height: 88vh;
       display: flex;
       align-items: center;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      right: -160px;
+      top: 5%;
+      background: radial-gradient(
+        circle,
+        rgba(255, 122, 24, 0.15),
+        transparent 68%
+      );
+      pointer-events: none;
     }
 
     .hero-grid {
       display: grid;
-
-      grid-template-columns: 1.02fr .98fr;
-
+      grid-template-columns: 1.15fr 0.85fr;
       align-items: center;
-
-      gap: 45px;
-    }
-
-    .eyebrow {
-      margin: 0 0 20px;
-
-      color: #858178;
-
-      font-size: 11px;
-
-      letter-spacing: .24em;
-
-      text-transform: uppercase;
-
-      font-weight: 700;
-    }
-
-    .hero h1 {
-      max-width: 680px;
-    }
-
-    .hero h1 .line {
-      display: block;
-    }
-
-    .hero h1 .italic {
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 500;
+      gap: 65px;
+      padding-top: 65px;
+      padding-bottom: 65px;
     }
 
     .hero-copy {
-      max-width: 560px;
-
-      margin-top: 30px;
-
-      color: #77736d;
-
-      font-size: 15px;
+      animation: slide-in 0.8s ease both;
     }
 
-    .hero-actions {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 10px;
-
-      margin-top: 30px;
-    }
-
-    .pill {
+    .availability {
       display: inline-flex;
-
       align-items: center;
-      justify-content: center;
-
-      gap: 8px;
-
-      min-height: 44px;
-
-      padding: 0 19px;
-
-      border: 1px solid var(--line);
-
-      border-radius: 999px;
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-      transition: .25s ease;
-
-      background: rgba(255,253,247,.6);
-    }
-
-    .pill:hover {
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 10px 24px rgba(37,36,71,.08);
-    }
-
-    .pill.dark {
-      background: var(--accent);
-
-      color: white;
-
-      border-color: var(--accent);
-    }
-
-    /* =========================
-       HERO PHOTO
-    ========================= */
-
-    .hero-art {
-      min-height: 600px;
-
-      position: relative;
-
-      display: flex;
-
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-word {
-      position: absolute;
-
-      z-index: 0;
-
-      font-size: clamp(130px,17vw,250px);
-
-      font-weight: 700;
-
-      letter-spacing: -.09em;
-
-      color: rgba(54,51,76,.055);
-
-      user-select: none;
-    }
-
-    .portrait-wrap {
-      position: relative;
-
-      z-index: 2;
-
-      width: min(370px,75vw);
-
-      animation: float 5s ease-in-out infinite;
-    }
-
-    .portrait {
-      width: 100%;
-
-      aspect-ratio: 3 / 4;
-
-      object-fit: cover;
-
-      object-position: center top;
-
-      border-radius: 0 0 190px 190px;
-
-      filter: saturate(.9);
-
-      box-shadow:
-        0 35px 70px rgba(35,31,61,.15);
-
-      background: #ded7c9;
-    }
-
-    .floating-tag {
-      position: absolute;
-
-      right: -25px;
-      bottom: 52px;
-
-      padding: 13px 17px;
-
-      background: var(--white);
-
-      border: 1px solid var(--line);
-
-      border-radius: 18px;
-
-      box-shadow: var(--shadow);
-
-      font-size: 11px;
-
-      font-weight: 700;
-    }
-
-    .floating-tag small {
-      display: block;
-
-      color: #8a867d;
-
-      font-weight: 500;
-
-      margin-top: 2px;
-    }
-
-    @keyframes float {
-      0%,100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    .scroll-note {
-      position: absolute;
-
-      left: 0;
-      bottom: 25px;
-
-      display: flex;
-
-      align-items: center;
-
       gap: 10px;
-
-      color: #8c877f;
-
-      font-size: 10px;
-
-      text-transform: uppercase;
-
-      letter-spacing: .16em;
-    }
-
-    .scroll-note::after {
-      content: "";
-
-      width: 55px;
-      height: 1px;
-
-      background: var(--line);
-    }
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 70px;
-
-      align-items: center;
-    }
-
-    .about-title {
-      font-size: clamp(50px,7vw,90px);
-
-      line-height: .93;
-
-      margin: 0 0 28px;
-
-      letter-spacing: -.065em;
-    }
-
-    .about-text {
-      max-width: 540px;
-
-      color: #77736c;
-
-      font-size: 15px;
-    }
-
-    .about-actions {
-      display: flex;
-
-      gap: 9px;
-
-      flex-wrap: wrap;
-
-      margin-top: 25px;
-    }
-
-    .facts {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 0;
-
-      border-top: 1px solid var(--line);
-
-      border-bottom: 1px solid var(--line);
-
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--muted);
+      font-size: 0.83rem;
       margin-bottom: 24px;
+      background: rgba(255, 255, 255, 0.025);
     }
 
-    .fact {
-      padding: 18px 5px;
-
-      border-bottom: 1px solid var(--line);
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 15px;
-
-      font-size: 11px;
+    .availability::before {
+      content: "";
+      height: 8px;
+      width: 8px;
+      background: #53d89a;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #53d89a;
     }
 
-    .fact:nth-child(odd) {
-      padding-right: 22px;
+    .hero h1 {
+      font-size: clamp(4rem, 9vw, 7.5rem);
+      line-height: 0.98;
+      letter-spacing: -5px;
+      font-weight: 900;
+      margin: 18px 0;
     }
 
-    .fact:nth-child(even) {
-      padding-left: 22px;
-
-      border-left: 1px solid var(--line);
+    .hero h1 span {
+      color: var(--accent);
     }
 
-    .fact:nth-last-child(-n+2) {
-      border-bottom: 0;
-    }
-
-    .fact b {
-      font-weight: 600;
-    }
-
-    .fact span {
-      color: #858078;
-
-      text-align: right;
-    }
-
-    /* =========================
-       ID CARD
-    ========================= */
-
-    .id-stage {
-      min-height: 450px;
-
-      display: grid;
-
-      place-items: center;
-
-      position: relative;
-    }
-
-    .id-card {
-      width: min(330px,100%);
-
-      background: var(--white);
-
-      border: 1px solid rgba(37,36,71,.12);
-
-      border-radius: 22px;
-
-      overflow: hidden;
-
-      transform: rotate(-4deg);
-
-      box-shadow:
-        0 28px 70px rgba(37,36,71,.15);
-
-      transition: .45s ease;
-    }
-
-    .id-card:hover {
-      transform: rotate(0) translateY(-7px);
-    }
-
-    .id-top {
-      background: var(--accent);
-
-      color: #fff;
-
-      padding: 17px 19px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      font-size: 11px;
-
-      font-weight: 700;
-
-      letter-spacing: .06em;
-    }
-
-    .id-body {
-      padding: 22px;
-    }
-
-    .id-photo {
-      width: 112px;
-      height: 135px;
-
-      object-fit: cover;
-
-      border: 1px solid var(--line);
-
-      border-radius: 12px;
-
+    .hero h2 {
+      font-size: clamp(1.1rem, 2.5vw, 1.65rem);
+      font-weight: 650;
+      color: #dce3ef;
       margin-bottom: 20px;
     }
 
-    .id-name {
-      font-size: 21px;
-
-      font-weight: 700;
-
-      letter-spacing: -.04em;
+    .hero-description {
+      color: var(--muted);
+      max-width: 570px;
+      font-size: 1.03rem;
     }
 
-    .id-role {
-      font-size: 11px;
-
-      color: #8b867c;
-
-      margin-top: 3px;
-    }
-
-    .id-meta {
-      margin-top: 20px;
-
-      padding-top: 15px;
-
-      border-top: 1px solid var(--line);
-
+    .hero-buttons {
       display: flex;
-
-      justify-content: space-between;
-
-      font-size: 9px;
-
-      color: #817c73;
-    }
-
-    .barcode {
-      height: 30px;
-
-      margin-top: 18px;
-
-      background:
-        repeating-linear-gradient(
-          90deg,
-          #292744 0 2px,
-          transparent 2px 5px
-        );
-
-      opacity: .75;
-    }
-
-    /* =========================
-       RELEVERA
-    ========================= */
-
-    .featured {
-      background: var(--accent);
-
-      color: white;
-
-      border-radius: 36px;
-
-      padding: 58px;
-
-      position: relative;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 35px 90px rgba(37,36,71,.18);
-    }
-
-    .featured::before {
-      content: "RELEVERA";
-
-      position: absolute;
-
-      right: -20px;
-      bottom: -55px;
-
-      font-size: clamp(90px,14vw,190px);
-
-      line-height: 1;
-
-      font-weight: 700;
-
-      letter-spacing: -.08em;
-
-      color: rgba(255,255,255,.045);
-
-      pointer-events: none;
-    }
-
-    .featured-grid {
-      display: grid;
-
-      grid-template-columns: 1.1fr .9fr;
-
-      gap: 50px;
-
-      align-items: center;
-
-      position: relative;
-
-      z-index: 1;
-    }
-
-    .status {
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 8px;
-
-      padding: 8px 12px;
-
-      border: 1px solid rgba(255,255,255,.18);
-
-      border-radius: 999px;
-
-      font-size: 10px;
-
-      text-transform: uppercase;
-
-      letter-spacing: .14em;
-    }
-
-    .status i {
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
-      background: #b6e388;
-
-      box-shadow:
-        0 0 0 5px rgba(182,227,136,.10);
-    }
-
-    .featured h2 {
-      margin: 20px 0 16px;
-
-      font-size: clamp(60px,9vw,120px);
-
-      line-height: .86;
-
-      letter-spacing: -.07em;
-    }
-
-    .featured h2 .serif {
-      color: #dcd8f2;
-    }
-
-    .featured p {
-      max-width: 590px;
-
-      color: rgba(255,255,255,.70);
-
-      font-size: 14px;
-    }
-
-    .feature-points {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 10px;
-
-      margin-top: 28px;
-    }
-
-    .feature-point {
-      padding: 13px 15px;
-
-      border: 1px solid rgba(255,255,255,.12);
-
-      border-radius: 14px;
-
-      font-size: 11px;
-
-      color: rgba(255,255,255,.82);
-    }
-
-    .app-window {
-      min-height: 350px;
-
-      border: 1px solid rgba(255,255,255,.12);
-
-      border-radius: 24px;
-
-      background: rgba(255,255,255,.065);
-
-      padding: 18px;
-
-      transform: rotate(3deg);
-
-      box-shadow:
-        0 25px 60px rgba(0,0,0,.16);
-    }
-
-    .window-bar {
-      display: flex;
-
-      gap: 5px;
-
-      margin-bottom: 18px;
-    }
-
-    .window-bar i {
-      width: 7px;
-      height: 7px;
-
-      border-radius: 50%;
-
-      background: rgba(255,255,255,.3);
-    }
-
-    .window-content {
-      height: 275px;
-
-      border-radius: 16px;
-
-      background: rgba(255,255,255,.92);
-
-      color: var(--ink);
-
-      padding: 24px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-    }
-
-    .window-brand {
-      font-size: 10px;
-
-      letter-spacing: .18em;
-
-      text-transform: uppercase;
-
-      color: #7f7b77;
-    }
-
-    .window-title {
-      font-size: 34px;
-
-      letter-spacing: -.05em;
-
-      font-weight: 700;
-    }
-
-    .window-lines {
-      display: grid;
-
-      gap: 8px;
-    }
-
-    .window-lines span {
-      height: 8px;
-
-      border-radius: 8px;
-
-      background: #ddd8cf;
-    }
-
-    .window-lines span:nth-child(1) {
-      width: 85%;
-    }
-
-    .window-lines span:nth-child(2) {
-      width: 65%;
-    }
-
-    .window-lines span:nth-child(3) {
-      width: 48%;
-    }
-
-    .window-bottom {
-      display: flex;
-
-      justify-content: space-between;
-
-      font-size: 9px;
-
-      color: #77736c;
-    }
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    .work-head {
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: end;
-
-      gap: 30px;
-
-      margin-bottom: 45px;
-    }
-
-    .work-head h2 {
-      margin: 0;
-
-      font-size: clamp(55px,8vw,100px);
-
-      line-height: .88;
-
-      letter-spacing: -.07em;
-    }
-
-    .work-head p {
-      max-width: 340px;
-
-      color: #858077;
-
-      font-size: 13px;
-    }
-
-    .projects {
-      display: grid;
-
-      gap: 24px;
-    }
-
-    .project {
-      display: grid;
-
-      grid-template-columns: 70px 1fr 280px;
-
-      gap: 28px;
-
-      align-items: center;
-
-      padding: 25px 0;
-
-      border-top: 1px solid var(--line);
-
-      transition: .3s ease;
-    }
-
-    .project:last-child {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .project:hover {
-      padding-left: 12px;
-      padding-right: 12px;
-
-      background: rgba(255,255,255,.22);
-
-      border-radius: 18px;
-    }
-
-    .project-num {
-      font-size: 11px;
-
-      color: #8a857d;
-
-      letter-spacing: .12em;
-    }
-
-    .project h3 {
-      margin: 0;
-
-      font-size: 27px;
-
-      letter-spacing: -.045em;
-    }
-
-    .project p {
-      margin: 6px 0 0;
-
-      color: #827e76;
-
-      font-size: 12px;
-    }
-
-    .project-tags {
-      display: flex;
-
-      justify-content: flex-end;
-
+      gap: 14px;
       flex-wrap: wrap;
+      margin-top: 32px;
+    }
 
-      gap: 6px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 750;
+      font-size: 0.93rem;
+      border: 1px solid transparent;
+      background: var(--accent);
+      color: #15100b;
+      transition: transform 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: var(--accent-light);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(255, 122, 24, 0.06);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 390px;
+      justify-self: end;
+      animation: fade-in 1.2s ease both;
+    }
+
+    .hero-image-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -14px;
+      border: 1px solid rgba(255, 122, 24, 0.4);
+      border-radius: 24px;
+      transform: rotate(4deg);
+    }
+
+    .hero-image {
+      display: block;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 18px;
+      border: 2px solid rgba(255, 122, 24, 0.7);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.45),
+                  0 0 35px rgba(255, 122, 24, 0.12);
+      background: var(--panel);
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(8, 11, 18, 0.84);
+      backdrop-filter: blur(12px);
+    }
+
+    .photo-label strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .photo-label span {
+      color: var(--accent-light);
+      font-size: 0.82rem;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .about-card, .content-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+    }
+
+    .about-card h3,
+    .content-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    .about-card p,
+    .content-card p {
+      color: var(--muted);
+    }
+
+    .profile-details {
+      margin-top: 24px;
+      display: grid;
+      gap: 13px;
+    }
+
+    .detail {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail span:first-child {
+      color: var(--muted);
+    }
+
+    .detail span:last-child {
+      text-align: right;
+      font-weight: 650;
+    }
+
+    .education {
+      margin-top: 18px;
+      border-left: 2px solid var(--accent);
+      padding: 3px 0 3px 20px;
+    }
+
+    .education p {
+      margin-top: 5px;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: linear-gradient(145deg, var(--panel), #0b1019);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .skill-card:hover,
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 122, 24, 0.65);
+    }
+
+    .skill-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 122, 24, 0.12);
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 9px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
     }
 
     .tag {
-      border: 1px solid var(--line);
-
-      padding: 7px 10px;
-
-      border-radius: 999px;
-
-      font-size: 9px;
-
-      color: #6f6b64;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.035);
+      padding: 5px 10px;
+      border-radius: 7px;
+      color: #d6dce6;
+      font-size: 0.79rem;
     }
 
-    /* =========================
-       ARTIFACTS
-    ========================= */
+    /* PROJECTS */
 
-    .artifact-grid {
+    .projects-grid {
       display: grid;
-
-      grid-template-columns: repeat(3,1fr);
-
-      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
 
-    .artifact {
-      min-height: 210px;
-
-      padding: 24px;
-
-      background: rgba(255,253,247,.58);
-
-      border: 1px solid var(--line);
-
-      border-radius: 22px;
-
+    .project-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform 0.25s, border-color 0.25s;
       display: flex;
-
       flex-direction: column;
+    }
 
+    .project-top {
+      display: flex;
+      align-items: center;
       justify-content: space-between;
-
-      transition: .3s ease;
+      gap: 12px;
+      margin-bottom: 18px;
     }
 
-    .artifact:hover {
-      transform: translateY(-5px);
-
-      background: var(--white);
-
-      box-shadow: var(--shadow);
+    .project-number {
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      font-weight: 800;
     }
 
-    .artifact-index {
-      font-size: 10px;
-
-      color: #8a857d;
-
-      letter-spacing: .15em;
+    .project-type {
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 4px 9px;
+      border-radius: 20px;
+      font-size: 0.75rem;
     }
 
-    .artifact h3 {
-      font-size: 20px;
-
-      letter-spacing: -.04em;
-
-      margin: 20px 0 6px;
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
     }
 
-    .artifact p {
-      font-size: 11px;
-
-      color: #817d75;
-
-      margin: 0;
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
     }
 
-    .artifact-link {
-      margin-top: 20px;
-
-      font-size: 10px;
-
-      font-weight: 700;
+    .project-card .tags {
+      margin-bottom: 23px;
     }
 
-    /* =========================
-       SKILLS
-    ========================= */
+    .project-link {
+      margin-top: auto;
+      padding-top: 5px;
+      color: var(--accent-light);
+      font-weight: 750;
+    }
 
-    .skills-layout {
+    .project-link:hover {
+      color: white;
+    }
+
+    /* TESTING PROCESS */
+
+    .process-grid {
       display: grid;
-
-      grid-template-columns: .8fr 1.2fr;
-
-      gap: 70px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
     }
 
-    .skills-title {
-      font-size: clamp(50px,7vw,90px);
-
-      line-height: .88;
-
-      letter-spacing: -.07em;
-
-      margin: 0;
+    .process-step {
+      padding: 22px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
     }
 
-    .skill-groups {
+    .process-step span {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.4rem;
+    }
+
+    .process-step h3 {
+      margin: 8px 0;
+      font-size: 1.05rem;
+    }
+
+    .process-step p {
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    /* CONTACT */
+
+    .contact-panel {
+      background:
+        radial-gradient(ellipse at top right,
+          rgba(255, 122, 24, 0.12), transparent 55%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: clamp(25px, 6vw, 55px);
+    }
+
+    .contact-grid {
       display: grid;
-
-      gap: 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: start;
     }
 
-    .skill-group {
-      border-top: 1px solid var(--line);
-
-      padding-top: 17px;
+    .contact-grid h3 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
     }
 
-    .skill-group h3 {
-      margin: 0 0 13px;
-
-      font-size: 11px;
-
-      letter-spacing: .16em;
-
-      text-transform: uppercase;
-
-      color: #858078;
+    .contact-grid p {
+      color: var(--muted);
     }
 
-    .skill-list {
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 7px;
-    }
-
-    .skill {
-      padding: 10px 13px;
-
-      background: rgba(255,255,255,.35);
-
-      border: 1px solid var(--line);
-
-      border-radius: 999px;
-
-      font-size: 11px;
-    }
-
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    .timeline {
-      border-top: 1px solid var(--line);
-    }
-
-    .timeline-item {
+    .contact-list {
       display: grid;
-
-      grid-template-columns: 180px 1fr 180px;
-
-      gap: 30px;
-
-      padding: 28px 0;
-
-      border-bottom: 1px solid var(--line);
+      gap: 12px;
     }
 
-    .timeline-date {
-      font-size: 10px;
-
-      color: #8a857d;
-
-      text-transform: uppercase;
-
-      letter-spacing: .12em;
-    }
-
-    .timeline h3 {
-      margin: 0;
-
-      font-size: 23px;
-
-      letter-spacing: -.04em;
-    }
-
-    .timeline p {
-      margin: 6px 0 0;
-
-      color: #817d75;
-
-      font-size: 12px;
-    }
-
-    .timeline-side {
-      text-align: right;
-
-      color: #817d75;
-
-      font-size: 10px;
-    }
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact {
-      text-align: center;
-
-      padding: 100px 30px;
-
-      border-top: 1px solid var(--line);
-    }
-
-    .contact h2 {
-      margin: 0;
-
-      font-size: clamp(65px,11vw,150px);
-
-      line-height: .8;
-
-      letter-spacing: -.08em;
-    }
-
-    .contact h2 .serif {
+    .contact-item {
       display: block;
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow-wrap: anywhere;
+      background: rgba(255, 255, 255, 0.025);
+      transition: border-color 0.2s;
     }
 
-    .contact p {
-      max-width: 480px;
-
-      margin: 30px auto;
-
-      color: #817d75;
-
-      font-size: 13px;
+    .contact-item:hover {
+      border-color: var(--accent);
     }
 
-    .contact-actions {
-      display: flex;
-
-      justify-content: center;
-
-      gap: 9px;
-
-      flex-wrap: wrap;
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 4px;
     }
+
+    .contact-item strong {
+      font-size: 0.94rem;
+    }
+
+    .contact-note {
+      margin-top: 18px;
+      font-size: 0.84rem;
+    }
+
+    /* FOOTER */
 
     footer {
-      padding: 25px 0 40px;
-
-      color: #8b867d;
-
-      font-size: 10px;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 0.86rem;
     }
 
-    /* =========================
-       TABLET
-    ========================= */
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-    @media(max-width:900px) {
+    .back-top {
+      color: var(--accent-light);
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
 
       .nav-links {
+        display: none;
         position: absolute;
-
-        top: 60px;
-
+        top: 68px;
         left: 0;
         right: 0;
-
-        display: none;
-
-        padding: 10px;
-
-        background: rgba(255,253,247,.96);
-
-        border: 1px solid var(--line);
-
-        border-radius: 24px;
-
-        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: #0b1019;
+        padding: 12px 5% 20px;
+        border-bottom: 1px solid var(--border);
       }
 
       .nav-links.open {
-        display: grid;
+        display: flex;
       }
 
       .nav-links a {
-        text-align: center;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .featured-grid,
-      .skills-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 125px;
-      }
-
-      .hero-art {
-        min-height: 520px;
-      }
-
-      .portrait-wrap {
-        width: min(310px,75vw);
-      }
-
-      .featured {
-        padding: 38px 26px;
-      }
-
-      .app-window {
-        transform: none;
-      }
-
-      .artifact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .project {
-        grid-template-columns: 45px 1fr;
-      }
-
-      .project-tags {
-        grid-column: 2;
-
-        justify-content: flex-start;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
-      .timeline-side {
-        text-align: left;
-      }
-
-      .work-head {
-        display: block;
-      }
-
-      .work-head p {
-        margin-top: 22px;
-      }
-    }
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media(max-width:600px) {
-
-      .wrap {
-        width: min(100% - 30px,1180px);
-      }
-
-      .nav-shell {
-        top: 10px;
-      }
-
-      .brand {
-        font-size: 11px;
-      }
-
-      .section {
-        padding: 95px 0;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
       }
 
       .hero {
         min-height: auto;
-
-        padding: 120px 0 80px;
       }
 
-      .hero-art {
-        min-height: 430px;
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 55px;
+        padding-bottom: 65px;
       }
 
-      .floating-tag {
-        right: 0;
-        bottom: 20px;
+      .hero-copy {
+        order: 2;
       }
 
-      .facts {
+      .hero-image-wrap {
+        order: 1;
+        justify-self: center;
+        max-width: 270px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .about-grid,
+      .projects-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .fact:nth-child(even) {
-        padding-left: 5px;
-
-        border-left: 0;
+      .section {
+        padding: 70px 0;
       }
 
-      .fact:nth-last-child(-n+2) {
-        border-bottom: 1px solid var(--line);
-      }
-
-      .fact:last-child {
-        border-bottom: 0;
-      }
-
-      .feature-points {
-        grid-template-columns: 1fr;
-      }
-
-      .artifact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .id-stage {
-        min-height: 380px;
-      }
-
-      footer {
-        display: block;
-      }
-
-      footer span {
-        display: block;
-
-        margin-top: 8px;
+      .section-heading {
+        margin-bottom: 28px;
       }
     }
 
-    @media(prefers-reduced-motion:reduce) {
-
-      html {
-        scroll-behavior: auto;
+    @media (max-width: 450px) {
+      .skills-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
       }
 
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      .about-card,
+      .project-card,
+      .skill-card {
+        padding: 21px;
+      }
+
+      .detail {
+        flex-direction: column;
+      }
+
+      .detail span:last-child {
+        text-align: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
       *::after {
-        animation: none !important;
-
-        transition: none !important;
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
       }
 
       .reveal {
         opacity: 1;
-
         transform: none;
       }
     }
@@ -1542,1553 +804,590 @@
 
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">TEJA<span>.</span></a>
 
-  <nav class="nav-shell">
+      <button class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        ☰ Menu
+      </button>
 
-    <a href="#home" class="brand">
-      <span class="brand-mark">TG</span>
-      <span>Tejilal Guguloth</span>
-    </a>
-
-    <div class="nav-links" id="navLinks">
-
-      <a href="#about">About</a>
-
-      <a href="#relevera">Relevera</a>
-
-      <a href="#work">Work</a>
-
-      <a href="#experience">Experience</a>
-
-      <a href="#skills">Skills</a>
-
-      <a href="#contact">Contact</a>
-
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#testing">QA Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-
-    <button
-      class="menu-btn"
-      id="menuBtn"
-      aria-label="Open navigation">
-      ☰
-    </button>
-
-  </nav>
-
+  </header>
 
   <main>
 
-    <!-- =========================
-         HERO
-    ========================= -->
-
+    <!-- HERO -->
     <section class="hero" id="home">
+      <div class="container hero-grid">
 
-      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="availability">
+            Open to QA opportunities
+          </div>
 
-        <div class="reveal">
+          <p class="eyebrow">Quality first. Every release.</p>
 
-          <p class="eyebrow">
-            TEJILAL GUGULOTH · QA PORTFOLIO
+          <h1>TEJA<span>.</span></h1>
+
+          <h2>QA Test Engineer | Manual &amp; Automation Testing</h2>
+
+          <p class="hero-description">
+            BCA graduate passionate about software quality, test
+            automation, and finding defects before users do.
+            Exploring Selenium, Java, SQL, API testing, and
+            reliable software delivery.
           </p>
 
-          <h1 class="display">
-
-            <span class="line">
-              Software
-            </span>
-
-            <span class="line serif italic">
-              Tester.
-            </span>
-
-            <span class="line">
-              QA Engineer.
-            </span>
-
-          </h1>
-
-          <p class="hero-copy">
-            BCA graduate focused on quality assurance, manual testing
-            and browser automation. I test user flows, document defects
-            and build reliable Selenium automation with Java.
-          </p>
-
-          <div class="hero-actions">
-
-            <a
-              class="pill dark"
-              href="#work">
-              Explore my work ↗
-            </a>
-
-            <a
-              class="pill"
-              href="https://github.com/Teja5467/teja5467.github.io"
-              target="_blank"
-              rel="noopener">
-              GitHub ↗
-            </a>
-
-            <a
-              class="pill"
-              href="https://www.linkedin.com/in/guguloth-tejilal-9a6b35427"
-              target="_blank"
-              rel="noopener">
-              LinkedIn ↗
-            </a>
-
+          <div class="hero-buttons">
+            <a class="btn" href="#projects">Explore My Projects ↗</a>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
           </div>
 
+          <div class="tags">
+            <span class="tag">Manual Testing</span>
+            <span class="tag">Selenium</span>
+            <span class="tag">Java</span>
+            <span class="tag">SQL</span>
+            <span class="tag">API Testing</span>
+          </div>
         </div>
 
+        <div class="hero-image-wrap">
+          <img
+            class="hero-image"
+            src="./Tejilal-Profile.png"
+            alt="Teja's professional profile photograph"
+            onerror="this.onerror=null;this.src='./teja-profile.png';"
+          >
 
-        <div class="hero-art reveal">
-
-          <div class="hero-word">
-            QA
+          <div class="photo-label">
+            <strong>TEJA</strong>
+            <span>QA TEST ENGINEER</span>
           </div>
-
-          <div class="portrait-wrap">
-
-            <img
-              class="portrait"
-              src="Tejilal-Profile.png"
-              alt="Tejilal Guguloth — Software Tester and QA Engineer">
-
-            <div class="floating-tag">
-
-              SOFTWARE TESTER
-
-              <small>
-                Manual · Automation · QA
-              </small>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <div class="scroll-note">
-          Scroll to explore
         </div>
 
       </div>
-
     </section>
 
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
-
+    <!-- ABOUT -->
     <section class="section" id="about">
-
-      <div class="wrap about-grid">
-
-        <div class="reveal">
-
-          <div class="section-label">
-            <span>01</span>
-            About
-          </div>
-
-          <h2 class="about-title">
-
-            Hi, I'm
-
-            <span class="serif">
-              Tejilal.
-            </span>
-
-          </h2>
-
-          <p class="about-text">
-            I'm a Software Tester / QA Engineer with a BCA background
-            and hands-on practice across manual testing, Selenium
-            WebDriver, Java, SQL, API testing and ServiceNow ITSM.
-          </p>
-
-          <p class="about-text">
-            My work is centered on turning application workflows into
-            structured test coverage, reproducing issues clearly,
-            validating expected behaviour and automating repeatable
-            browser checks.
-          </p>
-
-          <div class="about-actions">
-
-            <a
-              class="pill dark"
-              href="https://github.com/Teja5467/teja5467.github.io"
-              target="_blank"
-              rel="noopener">
-              GitHub ↗
-            </a>
-
-            <a
-              class="pill"
-              href="https://www.linkedin.com/in/guguloth-tejilal-9a6b35427"
-              target="_blank"
-              rel="noopener">
-              LinkedIn ↗
-            </a>
-
-          </div>
-
-        </div>
-
-
-        <!-- ID CARD -->
-
-        <div class="reveal">
-
-          <div class="id-stage">
-
-            <article class="id-card">
-
-              <div class="id-top">
-
-                <span>
-                  DEVELOPER ID
-                </span>
-
-                <span>
-                  QA / 2026
-                </span>
-
-              </div>
-
-              <div class="id-body">
-
-                <img
-                  class="id-photo"
-                  src="Tejilal-Profile.png"
-                  alt="Tejilal">
-
-                <div class="id-name">
-                  TEJILAL GUGULOTH
-                </div>
-
-                <div class="id-role">
-                  SOFTWARE TESTER · QA ENGINEER
-                </div>
-
-                <div class="id-meta">
-
-                  <span>
-                    BCA
-                  </span>
-
-                  <span>
-                    CGPA 8.56 / 10
-                  </span>
-
-                </div>
-
-                <div class="barcode"></div>
-
-              </div>
-
-            </article>
-
-          </div>
-
-        </div>
-
-
-        <!-- FACTS -->
-
-        <div
-          class="reveal"
-          style="grid-column:1/-1">
-
-          <div class="facts">
-
-            <div class="fact">
-
-              <b>
-                Based in
-              </b>
-
-              <span>
-                India
-              </span>
-
-            </div>
-
-
-            <div class="fact">
-
-              <b>
-                Education
-              </b>
-
-              <span>
-                BCA · Government City College
-              </span>
-
-            </div>
-
-
-            <div class="fact">
-
-              <b>
-                Graduated
-              </b>
-
-              <span>
-                April 2026
-              </span>
-
-            </div>
-
-
-            <div class="fact">
-
-              <b>
-                Focus
-              </b>
-
-              <span>
-                Manual + Automation QA
-              </span>
-
-            </div>
-
-
-            <div class="fact">
-
-              <b>
-                Automation
-              </b>
-
-              <span>
-                Java · Selenium · JUnit · Maven
-              </span>
-
-            </div>
-
-
-            <div class="fact">
-
-              <b>
-                Tools
-              </b>
-
-              <span>
-                SQL · Postman · Git · ServiceNow
-              </span>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         RELEVERA
-    ========================= -->
-
-    <section class="section" id="relevera">
-
-      <div class="wrap">
-
-        <div class="section-label reveal">
-
-          <span>
-            02
-          </span>
-
-          Currently Building
-
-        </div>
-
-
-        <article class="featured reveal">
-
-          <div class="featured-grid">
-
-            <div>
-
-              <span class="status">
-
-                <i></i>
-
-                In development
-
-              </span>
-
-
-              <h2>
-
-                Relevera
-
-                <span class="serif">
-                  .
-                </span>
-
-              </h2>
-
-
-              <p>
-                My current application-development project. I'm
-                developing Relevera while bringing a QA mindset
-                into the product: thinking about user flows,
-                validation, edge cases and quality throughout the build.
-              </p>
-
-
-              <div class="feature-points">
-
-                <div class="feature-point">
-                  01 · Application Development
-                </div>
-
-                <div class="feature-point">
-                  02 · Functional Validation
-                </div>
-
-                <div class="feature-point">
-                  03 · UI / UX Checks
-                </div>
-
-                <div class="feature-point">
-                  04 · QA Mindset
-                </div>
-
-              </div>
-
-            </div>
-
-
-            <div class="app-window">
-
-              <div class="window-bar">
-
-                <i></i>
-                <i></i>
-                <i></i>
-
-              </div>
-
-
-              <div class="window-content">
-
-                <div class="window-brand">
-                  RELEVERA · PROJECT
-                </div>
-
-                <div class="window-title">
-
-                  Building.<br>
-                  Testing.<br>
-                  Improving.
-
-                </div>
-
-
-                <div class="window-lines">
-
-                  <span></span>
-                  <span></span>
-                  <span></span>
-
-                </div>
-
-
-                <div class="window-bottom">
-
-                  <span>
-                    STATUS
-                  </span>
-
-                  <strong>
-                    IN DEVELOPMENT
-                  </strong>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         PROJECTS
-    ========================= -->
-
-    <section class="section" id="work">
-
-      <div class="wrap">
-
-        <div class="section-label reveal">
-
-          <span>
-            03
-          </span>
-
-          Selected Work
-
-        </div>
-
-
-        <div class="work-head reveal">
-
-          <h2>
-
-            Things I've
-
-            <span class="serif">
-              tested.
-            </span>
-
-          </h2>
-
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Get to know me</p>
+          <h2>About <span class="accent">Me</span></h2>
           <p>
-            A recruiter-friendly view of my testing projects,
-            automation practice and technical QA work.
+            An aspiring QA professional focused on building
+            strong testing fundamentals and practical technical skills.
           </p>
-
         </div>
 
+        <div class="about-grid">
 
-        <div class="projects">
+          <div class="about-card reveal">
+            <h3>My QA Journey</h3>
+            <p>
+              I enjoy understanding how applications work, identifying
+              edge cases, writing test cases, reporting defects, and
+              improving product reliability. My goal is to grow into
+              a well-rounded QA engineer with both manual and
+              automation testing expertise.
+            </p>
 
+            <div class="profile-details">
+              <div class="detail">
+                <span>Qualification</span>
+                <span>BCA Graduate</span>
+              </div>
 
-          <!-- PROJECT 1 -->
+              <div class="detail">
+                <span>CGPA</span>
+                <span>8.56 / 10</span>
+              </div>
 
-          <article class="project reveal">
+              <div class="detail">
+                <span>Primary Location</span>
+                <span>Hyderabad, India</span>
+              </div>
 
-            <div class="project-num">
-              01
+              <div class="detail">
+                <span>Career Focus</span>
+                <span>QA / Test Engineering</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card reveal">
+            <h3>Education &amp; Training</h3>
+
+            <div class="education">
+              <strong>Bachelor of Computer Applications (BCA)</strong>
+              <p>Government City College · 2023–2026</p>
+              <p>CGPA: 8.56 / 10</p>
             </div>
 
-            <div>
-
-              <h3>
-                OrangeHRM — Manual & Automation Testing
-              </h3>
-
+            <div class="education">
+              <strong>QA Testing &amp; Automation Learning</strong>
               <p>
-                End-to-end QA practice covering authentication,
-                navigation, employee workflows, validation,
-                regression checks and UI behaviour.
+                Building practical knowledge of test design,
+                Selenium automation, Java fundamentals, SQL,
+                and defect lifecycle.
               </p>
-
             </div>
 
-            <div class="project-tags">
-
-              <span class="tag">
-                Manual QA
-              </span>
-
-              <span class="tag">
-                Regression
-              </span>
-
-              <span class="tag">
-                Selenium
-              </span>
-
-              <span class="tag">
-                Java
-              </span>
-
-            </div>
-
-          </article>
-
-
-          <!-- PROJECT 2 -->
-
-          <article class="project reveal">
-
-            <div class="project-num">
-              02
-            </div>
-
-            <div>
-
-              <h3>
-                OrangeHRM Selenium Automation
-              </h3>
-
+            <div class="education">
+              <strong>Hands-on Practice</strong>
               <p>
-                Java + Selenium WebDriver smoke automation using
-                locators, explicit waits, assertions and JUnit
-                lifecycle hooks.
+                Developing a portfolio of testing exercises,
+                automation scripts, test documentation,
+                and QA artifacts.
               </p>
-
             </div>
-
-            <div class="project-tags">
-
-              <span class="tag">
-                Java
-              </span>
-
-              <span class="tag">
-                Selenium
-              </span>
-
-              <span class="tag">
-                JUnit 5
-              </span>
-
-              <span class="tag">
-                Maven
-              </span>
-
-            </div>
-
-          </article>
-
-
-          <!-- PROJECT 3 -->
-
-          <article class="project reveal">
-
-            <div class="project-num">
-              03
-            </div>
-
-            <div>
-
-              <h3>
-                SQL Validation
-              </h3>
-
-              <p>
-                QA-oriented SQL practice for validating records,
-                filtering data and checking expected database results.
-              </p>
-
-            </div>
-
-            <div class="project-tags">
-
-              <span class="tag">
-                SQL
-              </span>
-
-              <span class="tag">
-                Validation
-              </span>
-
-              <span class="tag">
-                Database QA
-              </span>
-
-            </div>
-
-          </article>
-
-
-          <!-- PROJECT 4 -->
-
-          <article class="project reveal">
-
-            <div class="project-num">
-              04
-            </div>
-
-            <div>
-
-              <h3>
-                ServiceNow ITSM
-              </h3>
-
-              <p>
-                Internship exposure to Incident, Problem, Change
-                and Service Request workflows in ServiceNow ITSM.
-              </p>
-
-            </div>
-
-            <div class="project-tags">
-
-              <span class="tag">
-                ServiceNow
-              </span>
-
-              <span class="tag">
-                ITSM
-              </span>
-
-              <span class="tag">
-                Incident
-              </span>
-
-            </div>
-
-          </article>
-
+          </div>
 
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =========================
-         QA ARTIFACTS
-    ========================= -->
-
-    <section class="section" id="artifacts">
-
-      <div class="wrap">
-
-        <div class="section-label reveal">
-
-          <span>
-            04
-          </span>
-
-          Proof of Work
-
-        </div>
-
-
-        <div class="work-head reveal">
-
-          <h2>
-
-            Actual QA
-
-            <span class="serif">
-              artifacts.
-            </span>
-
-          </h2>
-
-          <p>
-            Real portfolio files from my testing work. Open
-            the original documents directly from the GitHub
-            Pages repository.
-          </p>
-
-        </div>
-
-
-        <div class="artifact-grid">
-
-
-          <!-- 1 -->
-
-          <a
-            class="artifact reveal"
-            href="qa-artifacts/TEST_PLAN.md"
-            target="_blank">
-
-            <div>
-
-              <div class="artifact-index">
-                01 · MARKDOWN
-              </div>
-
-              <h3>
-                OrangeHRM Test Plan
-              </h3>
-
-              <p>
-                Scope, environment, testing types and deliverables.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              OPEN FILE ↗
-            </div>
-
-          </a>
-
-
-          <!-- 2 -->
-
-          <a
-            class="artifact reveal"
-            href="qa-artifacts/OrangeHRM_QA_Testing_Artifacts.xlsx"
-            target="_blank">
-
-            <div>
-
-              <div class="artifact-index">
-                02 · EXCEL
-              </div>
-
-              <h3>
-                QA Testing Artifacts
-              </h3>
-
-              <p>
-                Test cases, traceability and execution evidence.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              OPEN FILE ↗
-            </div>
-
-          </a>
-
-
-          <!-- 3 -->
-
-          <a
-            class="artifact reveal"
-            href="qa-artifacts/SQL_VALIDATION.md"
-            target="_blank">
-
-            <div>
-
-              <div class="artifact-index">
-                03 · SQL
-              </div>
-
-              <h3>
-                SQL Validation
-              </h3>
-
-              <p>
-                Database validation examples for QA practice.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              OPEN FILE ↗
-            </div>
-
-          </a>
-
-
-          <!-- 4 -->
-
-          <a
-            class="artifact reveal"
-            href="qa-artifacts/Automation%20Testing.pdf"
-            target="_blank">
-
-            <div>
-
-              <div class="artifact-index">
-                04 · PDF
-              </div>
-
-              <h3>
-                Automation Testing
-              </h3>
-
-              <p>
-                Automation testing evidence and documented test results.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              OPEN PDF ↗
-            </div>
-
-          </a>
-
-
-          <!-- 5 -->
-
-          <a
-            class="artifact reveal"
-            href="qa-artifacts/Product%20level%20Testing.pdf"
-            target="_blank">
-
-            <div>
-
-              <div class="artifact-index">
-                05 · PDF
-              </div>
-
-              <h3>
-                Product Level Testing
-              </h3>
-
-              <p>
-                Product-level OrangeHRM testing documentation.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              OPEN PDF ↗
-            </div>
-
-          </a>
-
-
-          <!-- 6 -->
-
-          <a
-            class="artifact reveal"
-            href="automation/OrangeHRMSmokeTest.java"
-            target="_blank">
-
-            <div>
-
-              <div class="artifact-index">
-                06 · JAVA
-              </div>
-
-              <h3>
-                Selenium Smoke Test
-              </h3>
-
-              <p>
-                Java + Selenium WebDriver automation source.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              VIEW SOURCE ↗
-            </div>
-
-          </a>
-
-
-          <!-- 7 -->
-
-          <a
-            class="artifact reveal"
-            href="automation/README.md"
-            target="_blank">
-
-            <div>
-
-              <div class="artifact-index">
-                07 · DOCS
-              </div>
-
-              <h3>
-                Automation README
-              </h3>
-
-              <p>
-                Automation flow, Selenium concepts and execution steps.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              READ DOCS ↗
-            </div>
-
-          </a>
-
-
-          <!-- 8 -->
-
-          <a
-            class="artifact reveal"
-            href="automation/pom.xml"
-            target="_blank">
-
-            <div>
-
-              <div class="artifact-index">
-                08 · MAVEN
-              </div>
-
-              <h3>
-                Maven Configuration
-              </h3>
-
-              <p>
-                Project dependencies and test configuration.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              VIEW XML ↗
-            </div>
-
-          </a>
-
-
-          <!-- 9 -->
-
-          <a
-            class="artifact reveal"
-            href="https://github.com/Teja5467/teja5467.github.io"
-            target="_blank"
-            rel="noopener">
-
-            <div>
-
-              <div class="artifact-index">
-                09 · GITHUB
-              </div>
-
-              <h3>
-                Full Repository
-              </h3>
-
-              <p>
-                Portfolio source, automation project and QA evidence.
-              </p>
-
-            </div>
-
-            <div class="artifact-link">
-              VIEW REPOSITORY ↗
-            </div>
-
-          </a>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         SKILLS
-    ========================= -->
-
+    <!-- SKILLS -->
     <section class="section" id="skills">
-
-      <div class="wrap skills-layout">
-
-        <div class="reveal">
-
-          <div class="section-label">
-
-            <span>
-              05
-            </span>
-
-            Skills
-
-          </div>
-
-          <h2 class="skills-title">
-
-            Tools I
-
-            <span class="serif">
-              work with.
-            </span>
-
-          </h2>
-
-        </div>
-
-
-        <div class="skill-groups">
-
-
-          <div class="skill-group reveal">
-
-            <h3>
-              Testing
-            </h3>
-
-            <div class="skill-list">
-
-              <span class="skill">
-                Manual Testing
-              </span>
-
-              <span class="skill">
-                Functional Testing
-              </span>
-
-              <span class="skill">
-                Regression
-              </span>
-
-              <span class="skill">
-                Smoke Testing
-              </span>
-
-              <span class="skill">
-                Test Case Design
-              </span>
-
-              <span class="skill">
-                Bug Reporting
-              </span>
-
-              <span class="skill">
-                RTM
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-group reveal">
-
-            <h3>
-              Automation
-            </h3>
-
-            <div class="skill-list">
-
-              <span class="skill">
-                Selenium WebDriver
-              </span>
-
-              <span class="skill">
-                Java
-              </span>
-
-              <span class="skill">
-                JUnit 5
-              </span>
-
-              <span class="skill">
-                Maven
-              </span>
-
-              <span class="skill">
-                XPath
-              </span>
-
-              <span class="skill">
-                CSS Selectors
-              </span>
-
-              <span class="skill">
-                Explicit Waits
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="skill-group reveal">
-
-            <h3>
-              Tools & Technical
-            </h3>
-
-            <div class="skill-list">
-
-              <span class="skill">
-                SQL
-              </span>
-
-              <span class="skill">
-                API Testing
-              </span>
-
-              <span class="skill">
-                Postman
-              </span>
-
-              <span class="skill">
-                Git
-              </span>
-
-              <span class="skill">
-                GitHub
-              </span>
-
-              <span class="skill">
-                JIRA
-              </span>
-
-              <span class="skill">
-                ServiceNow
-              </span>
-
-              <span class="skill">
-                ITSM
-              </span>
-
-              <span class="skill">
-                Linux
-              </span>
-
-              <span class="skill">
-                Python
-              </span>
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         EXPERIENCE
-    ========================= -->
-
-    <section class="section" id="experience">
-
-      <div class="wrap">
-
-        <div class="section-label reveal">
-
-          <span>
-            06
-          </span>
-
-          Experience & Education
-
-        </div>
-
-
-        <div class="timeline">
-
-
-          <article class="timeline-item reveal">
-
-            <div class="timeline-date">
-              June 2026
-            </div>
-
-            <div>
-
-              <h3>
-                ServiceNow ITSM Intern
-              </h3>
-
-              <p>
-                SmartBridge — AICTE · Hands-on exposure to
-                Incident, Problem, Change and Service Request
-                workflows.
-              </p>
-
-            </div>
-
-            <div class="timeline-side">
-              Experience
-            </div>
-
-          </article>
-
-
-          <article class="timeline-item reveal">
-
-            <div class="timeline-date">
-              Aug 2023 — Apr 2026
-            </div>
-
-            <div>
-
-              <h3>
-                Bachelor of Computer Applications
-              </h3>
-
-              <p>
-                Government City College · BCA graduate ·
-                CGPA 8.56 / 10.
-              </p>
-
-            </div>
-
-            <div class="timeline-side">
-              Education
-            </div>
-
-          </article>
-
-
-          <article class="timeline-item reveal">
-
-            <div class="timeline-date">
-              2026 — Present
-            </div>
-
-            <div>
-
-              <h3>
-                Relevera — Application Development
-              </h3>
-
-              <p>
-                Currently developing my own application while
-                applying testing and quality practices throughout
-                the build.
-              </p>
-
-            </div>
-
-            <div class="timeline-side">
-              In Development
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CONTACT
-    ========================= -->
-
-    <section class="section" id="contact">
-
-      <div class="wrap">
-
-        <div class="contact reveal">
-
-          <div
-            class="section-label"
-            style="justify-content:center">
-
-            <span>
-              07
-            </span>
-
-            Contact
-
-          </div>
-
-
-          <h2>
-
-            Let's
-
-            <span class="serif">
-              connect.
-            </span>
-
-          </h2>
-
-
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Technical toolkit</p>
+          <h2>My <span class="accent">Skills</span></h2>
           <p>
-            Open to fresher and entry-level Software Testing,
-            QA and Automation opportunities.
+            Testing techniques and technologies I am learning
+            and applying in practice.
           </p>
-
-
-          <div class="contact-actions">
-
-            <a
-              class="pill dark"
-              href="https://www.linkedin.com/in/guguloth-tejilal-9a6b35427"
-              target="_blank"
-              rel="noopener">
-
-              LinkedIn ↗
-
-            </a>
-
-
-            <a
-              class="pill"
-              href="https://github.com/Teja5467/teja5467.github.io"
-              target="_blank"
-              rel="noopener">
-
-              GitHub ↗
-
-            </a>
-
-
-            <a
-              class="pill"
-              href="mailto:tejilalguguloth@gmail.com">
-
-              Email ↗
-
-            </a>
-
-          </div>
-
         </div>
 
-      </div>
+        <div class="skills-grid">
 
+          <article class="skill-card reveal">
+            <div class="skill-icon">✓</div>
+            <h3>Manual Testing</h3>
+            <p>
+              Functional, regression, smoke, sanity, exploratory,
+              and UI testing fundamentals.
+            </p>
+            <div class="tags">
+              <span class="tag">Test Cases</span>
+              <span class="tag">Test Scenarios</span>
+              <span class="tag">Bug Reports</span>
+              <span class="tag">STLC</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">⚙</div>
+            <h3>Automation Testing</h3>
+            <p>
+              Browser automation concepts and maintainable
+              automated test scripts.
+            </p>
+            <div class="tags">
+              <span class="tag">Selenium WebDriver</span>
+              <span class="tag">Locators</span>
+              <span class="tag">Waits</span>
+              <span class="tag">TestNG</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">⌘</div>
+            <h3>Programming</h3>
+            <p>
+              Programming fundamentals used in test automation
+              and technical problem solving.
+            </p>
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">OOP</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">▤</div>
+            <h3>Database Testing</h3>
+            <p>
+              Querying and validating data using relational
+              database concepts.
+            </p>
+            <div class="tags">
+              <span class="tag">SQL</span>
+              <span class="tag">Joins</span>
+              <span class="tag">CRUD</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">⇄</div>
+            <h3>API Testing</h3>
+            <p>
+              Understanding API requests, responses, status
+              codes, and response validation.
+            </p>
+            <div class="tags">
+              <span class="tag">REST APIs</span>
+              <span class="tag">JSON</span>
+              <span class="tag">Postman</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">◈</div>
+            <h3>Tools &amp; Workflow</h3>
+            <p>
+              Version control, issue tracking, test documentation,
+              and development workflows.
+            </p>
+            <div class="tags">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Jira Concepts</span>
+              <span class="tag">Linux</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2>QA <span class="accent">Projects</span></h2>
+          <p>
+            A growing collection of testing practice and automation
+            work. Open the linked repository to explore available files.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">PROJECT 01</span>
+              <span class="project-type">Automation</span>
+            </div>
+
+            <h3>Web UI Automation Workspace</h3>
+
+            <p>
+              A workspace for practicing browser automation,
+              element identification, synchronization, form
+              interactions, and repeatable UI checks.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Selenium</span>
+              <span class="tag">Java</span>
+              <span class="tag">WebDriver</span>
+            </div>
+
+            <a class="project-link"
+              href="https://github.com/Teja5467/teja5467.github.io/tree/main/automation"
+              target="_blank" rel="noopener noreferrer">
+              Explore Automation Files ↗
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">PROJECT 02</span>
+              <span class="project-type">QA Artifacts</span>
+            </div>
+
+            <h3>Testing Documentation</h3>
+
+            <p>
+              A place for test cases, test scenarios, execution
+              evidence, bug reports, and supporting QA documents.
+            </p>
+
+            <div class="tags">
+              <span class="tag">Test Design</span>
+              <span class="tag">Defect Reporting</span>
+              <span class="tag">Documentation</span>
+            </div>
+
+            <a class="project-link"
+              href="https://github.com/Teja5467/teja5467.github.io/tree/main/qa-artifacts"
+              target="_blank" rel="noopener noreferrer">
+              Explore QA Artifacts ↗
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">PROJECT 03</span>
+              <span class="project-type">Portfolio</span>
+            </div>
+
+            <h3>Cinematic QA Portfolio</h3>
+
+            <p>
+              A responsive personal portfolio presenting my
+              QA skills, testing interests, project resources,
+              and professional contact information.
+            </p>
+
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+
+            <a class="project-link"
+              href="https://github.com/Teja5467/teja5467.github.io"
+              target="_blank" rel="noopener noreferrer">
+              View Source Code ↗
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-top">
+              <span class="project-number">PROJECT 04</span>
+              <span class="project-type">Practice</span>
+            </div>
+
+            <h3>Manual Testing Practice</h3>
+
+            <p>
+              Practice exercises for requirement analysis,
+              positive and negative test scenarios, boundary
+              checks, regression, and defect documentation.
+            </p>
+
+            <div class="tags">
+              <span class="tag">SDLC</span>
+              <span class="tag">STLC</span>
+              <span class="tag">Functional Testing</span>
+            </div>
+
+            <a class="project-link"
+              href="https://github.com/Teja5467/teja5467.github.io"
+              target="_blank" rel="noopener noreferrer">
+              View Repository ↗
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- QA PROCESS -->
+    <section class="section" id="testing">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">How I approach quality</p>
+          <h2>My QA <span class="accent">Process</span></h2>
+          <p>
+            A simple testing workflow that helps organize
+            test execution and communicate defects clearly.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <article class="process-step reveal">
+            <span>01</span>
+            <h3>Understand</h3>
+            <p>
+              Review requirements, acceptance criteria,
+              and expected application behavior.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <span>02</span>
+            <h3>Design</h3>
+            <p>
+              Prepare test scenarios, test cases,
+              test data, and coverage.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <span>03</span>
+            <h3>Execute</h3>
+            <p>
+              Run tests, record results, collect evidence,
+              and investigate unexpected behavior.
+            </p>
+          </article>
+
+          <article class="process-step reveal">
+            <span>04</span>
+            <h3>Report &amp; Retest</h3>
+            <p>
+              Document defects, verify fixes, and
+              perform regression checks.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Let's connect</p>
+          <h2>Get in <span class="accent">Touch</span></h2>
+          <p>
+            Interested in QA, software testing, or entry-level
+            opportunities? Feel free to connect with me.
+          </p>
+        </div>
+
+        <div class="contact-panel reveal">
+          <div class="contact-grid">
+
+            <div>
+              <h3>Looking for my next opportunity.</h3>
+              <p>
+                I am interested in entry-level opportunities
+                in manual testing, automation testing, and
+                QA engineering where I can learn and contribute.
+              </p>
+
+              <div class="hero-buttons">
+                <a class="btn"
+                  href="mailto:chintuguguloth546@gmail.com">
+                  Email Me ↗
+                </a>
+
+                <a class="btn btn-outline"
+                  href="https://www.linkedin.com/in/tejilal-guguloth-2a29b4334"
+                  target="_blank" rel="noopener noreferrer">
+                  LinkedIn ↗
+                </a>
+              </div>
+
+              <p class="contact-note">
+                Replace any contact detail here if it changes.
+              </p>
+            </div>
+
+            <div class="contact-list">
+
+              <a class="contact-item"
+                href="mailto:chintuguguloth546@gmail.com">
+                <small>Email</small>
+                <strong>chintuguguloth546@gmail.com</strong>
+              </a>
+
+              <a class="contact-item"
+                href="https://www.linkedin.com/in/tejilal-guguloth-2a29b4334"
+                target="_blank" rel="noopener noreferrer">
+                <small>LinkedIn</small>
+                <strong>Connect professionally ↗</strong>
+              </a>
+
+              <a class="contact-item"
+                href="https://github.com/Teja5467"
+                target="_blank" rel="noopener noreferrer">
+                <small>GitHub</small>
+                <strong>github.com/Teja5467 ↗</strong>
+              </a>
+
+              <a class="contact-item"
+                href="https://github.com/Teja5467/teja5467.github.io"
+                target="_blank" rel="noopener noreferrer">
+                <small>Portfolio Source Code</small>
+                <strong>View repository ↗</strong>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <p>
+        © <span id="year"></span> TEJA.
+        Built with a focus on quality.
+      </p>
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer class="wrap">
-
-    <span>
-      © 2026 Tejilal Guguloth · Software Tester / QA Engineer
-    </span>
-
-    <span>
-      Built with HTML · CSS · JavaScript
-    </span>
-
+      <a href="#home" class="back-top">Back to top ↑</a>
+    </div>
   </footer>
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
   <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-    /* Mobile navigation */
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
 
-    const menuBtn =
-      document.getElementById("menuBtn");
-
-    const navLinks =
-      document.getElementById("navLinks");
-
-
-    menuBtn.addEventListener("click", () => {
-
-      navLinks.classList.toggle("open");
-
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
     });
 
+    // Close the mobile menu after clicking a navigation link
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
 
-    navLinks
-      .querySelectorAll("a")
-      .forEach(link => {
+    // Automatically update the copyright year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
-        link.addEventListener("click", () => {
+    // Reveal sections as they enter the viewport
+    const revealItems = document.querySelectorAll(".reveal");
 
-          navLinks.classList.remove("open");
-
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
         });
-
+      }, {
+        threshold: 0.12
       });
 
-
-    /* Scroll reveal */
-
-    const revealItems =
-      document.querySelectorAll(".reveal");
-
-
-    const observer =
-      new IntersectionObserver(
-
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add("show");
-
-              observer.unobserve(entry.target);
-
-            }
-
-          });
-
-        },
-
-        {
-          threshold: 0.12
-        }
-
-      );
-
-
-    revealItems.forEach(item => {
-
-      observer.observe(item);
-
-    });
-
-
-    /* Active navigation */
-
-    const sections =
-      document.querySelectorAll("section[id]");
-
-    const navItems =
-      document.querySelectorAll(".nav-links a");
-
-
-    const sectionObserver =
-      new IntersectionObserver(
-
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              navItems.forEach(item => {
-
-                item.classList.remove("active");
-
-              });
-
-
-              const active =
-                document.querySelector(
-                  `.nav-links a[href="#${entry.target.id}"]`
-                );
-
-
-              if (active) {
-
-                active.classList.add("active");
-
-              }
-
-            }
-
-          });
-
-        },
-
-        {
-          rootMargin: "-35% 0px -55% 0px"
-        }
-
-      );
-
-
-    sections.forEach(section => {
-
-      sectionObserver.observe(section);
-
-    });
-
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    }
   </script>
 
 </body>
